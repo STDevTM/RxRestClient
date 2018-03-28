@@ -2,6 +2,10 @@ use_frameworks!
 
 target 'RxRestClient_Example' do
   pod 'RxRestClient', :path => '../'
+  pod 'RxOptional'
+  pod 'ObjectMapper'
+  pod 'AlamofireNetworkActivityIndicator', '~> 2.2'
+  pod 'SDWebImage', '~> 4.0'
 
   target 'RxRestClient_Tests' do
     inherit! :search_paths

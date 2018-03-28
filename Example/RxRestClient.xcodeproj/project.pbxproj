@@ -9,12 +9,28 @@
 /* Begin PBXBuildFile section */
 		3D415E10C59C9E35AAC811BC /* Pods_RxRestClient_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69909A321AE479CD71890C3 /* Pods_RxRestClient_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACD81AFB9204008FA782 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* RepositoriesViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		738C7D32C229F96FB1410B48 /* Pods_RxRestClient_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8286D04B278F325D5FEBCD8 /* Pods_RxRestClient_Tests.framework */; };
+		9A28A2DE205BF6900051E02B /* RepositoriesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28A2DD205BF6900051E02B /* RepositoriesState.swift */; };
+		9A28A2E0205BF6F60051E02B /* RepositoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28A2DF205BF6F60051E02B /* RepositoriesService.swift */; };
+		9A28A2E2205BF8210051E02B /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28A2E1205BF8210051E02B /* Repository.swift */; };
+		9A28A2E4205BFA370051E02B /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28A2E3205BFA370051E02B /* RepositoriesViewModel.swift */; };
+		9A39C506206A2F590036BA02 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C505206A2F590036BA02 /* Contact.swift */; };
+		9A39C508206A32D90036BA02 /* ContactsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C507206A32D90036BA02 /* ContactsState.swift */; };
+		9A39C50A206A33DE0036BA02 /* ContactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C509206A33DE0036BA02 /* ContactsService.swift */; };
+		9A39C50D206A365B0036BA02 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C50C206A365B0036BA02 /* ContactTableViewCell.swift */; };
+		9A39C50F206A37900036BA02 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C50E206A37900036BA02 /* ContactsViewModel.swift */; };
+		9A39C511206A391B0036BA02 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C510206A391B0036BA02 /* ContactsViewController.swift */; };
+		9A39C513206A4FB90036BA02 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C512206A4FB90036BA02 /* NewContactViewController.swift */; };
+		9A39C515206A50790036BA02 /* NewContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C514206A50790036BA02 /* NewContactViewModel.swift */; };
+		9A39C517206A55250036BA02 /* NewContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C516206A55250036BA02 /* NewContact.swift */; };
+		9A39C51B206A5D580036BA02 /* ImageUploadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C51A206A5D580036BA02 /* ImageUploadResponse.swift */; };
+		9A39C51D206A5DBA0036BA02 /* ImageUploadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C51C206A5DBA0036BA02 /* ImageUploadState.swift */; };
+		9A39C520206A6F180036BA02 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C51F206A6F180036BA02 /* UIImage+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,11 +45,11 @@
 
 /* Begin PBXFileReference section */
 		0B15649EE24899A594BBCD81 /* Pods-RxRestClient_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxRestClient_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxRestClient_Example/Pods-RxRestClient_Example.release.xcconfig"; sourceTree = "<group>"; };
-		177634B2AE2349B731679201 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		177634B2AE2349B731679201 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* RxRestClient_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxRestClient_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* RepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -42,11 +58,27 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6A57BB764AFFA38C35D1BEAB /* Pods-RxRestClient_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxRestClient_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxRestClient_Tests/Pods-RxRestClient_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D54F3BC098218181BCF97B3 /* Pods-RxRestClient_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxRestClient_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxRestClient_Tests/Pods-RxRestClient_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		9A28A2DD205BF6900051E02B /* RepositoriesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesState.swift; sourceTree = "<group>"; };
+		9A28A2DF205BF6F60051E02B /* RepositoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesService.swift; sourceTree = "<group>"; };
+		9A28A2E1205BF8210051E02B /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		9A28A2E3205BFA370051E02B /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
+		9A39C505206A2F590036BA02 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		9A39C507206A32D90036BA02 /* ContactsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsState.swift; sourceTree = "<group>"; };
+		9A39C509206A33DE0036BA02 /* ContactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsService.swift; sourceTree = "<group>"; };
+		9A39C50C206A365B0036BA02 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		9A39C50E206A37900036BA02 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		9A39C510206A391B0036BA02 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		9A39C512206A4FB90036BA02 /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
+		9A39C514206A50790036BA02 /* NewContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewModel.swift; sourceTree = "<group>"; };
+		9A39C516206A55250036BA02 /* NewContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContact.swift; sourceTree = "<group>"; };
+		9A39C51A206A5D580036BA02 /* ImageUploadResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadResponse.swift; sourceTree = "<group>"; };
+		9A39C51C206A5DBA0036BA02 /* ImageUploadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadState.swift; sourceTree = "<group>"; };
+		9A39C51F206A6F180036BA02 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		A42DAEEC8A3AEE1412D49087 /* Pods-RxRestClient_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxRestClient_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxRestClient_Example/Pods-RxRestClient_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		A69909A321AE479CD71890C3 /* Pods_RxRestClient_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxRestClient_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5407349FC1D9AC921C11477 /* RxRestClient.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = RxRestClient.podspec; path = ../RxRestClient.podspec; sourceTree = "<group>"; };
+		C5407349FC1D9AC921C11477 /* RxRestClient.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RxRestClient.podspec; path = ../RxRestClient.podspec; sourceTree = "<group>"; };
 		C8286D04B278F325D5FEBCD8 /* Pods_RxRestClient_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxRestClient_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2D69DA486E24050EF561D90 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		F2D69DA486E24050EF561D90 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +145,12 @@
 		607FACD21AFB9204008FA782 /* Example for RxRestClient */ = {
 			isa = PBXGroup;
 			children = (
+				9A39C51E206A6F070036BA02 /* Extensions */,
+				9A28A2DC205BF6480051E02B /* Services */,
+				9A28A2DB205BF6430051E02B /* Models */,
+				9A28A2DA205BF63E0051E02B /* Views */,
+				9A28A2D9205BF6330051E02B /* ViewModels */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -157,6 +193,66 @@
 				F2D69DA486E24050EF561D90 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		9A28A2D9205BF6330051E02B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9A28A2E3205BFA370051E02B /* RepositoriesViewModel.swift */,
+				9A39C50E206A37900036BA02 /* ContactsViewModel.swift */,
+				9A39C514206A50790036BA02 /* NewContactViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9A28A2DA205BF63E0051E02B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A39C50B206A36460036BA02 /* Cells */,
+				607FACD71AFB9204008FA782 /* RepositoriesViewController.swift */,
+				9A39C510206A391B0036BA02 /* ContactsViewController.swift */,
+				9A39C512206A4FB90036BA02 /* NewContactViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9A28A2DB205BF6430051E02B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9A28A2DD205BF6900051E02B /* RepositoriesState.swift */,
+				9A28A2E1205BF8210051E02B /* Repository.swift */,
+				9A39C505206A2F590036BA02 /* Contact.swift */,
+				9A39C507206A32D90036BA02 /* ContactsState.swift */,
+				9A39C516206A55250036BA02 /* NewContact.swift */,
+				9A39C51C206A5DBA0036BA02 /* ImageUploadState.swift */,
+				9A39C51A206A5D580036BA02 /* ImageUploadResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9A28A2DC205BF6480051E02B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9A28A2DF205BF6F60051E02B /* RepositoriesService.swift */,
+				9A39C509206A33DE0036BA02 /* ContactsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9A39C50B206A36460036BA02 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9A39C50C206A365B0036BA02 /* ContactTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9A39C51E206A6F070036BA02 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9A39C51F206A6F180036BA02 /* UIImage+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,11 +453,27 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RxRestClient_Example/Pods-RxRestClient_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRestClient/RxRestClient.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRestClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -375,7 +487,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				9A39C50A206A33DE0036BA02 /* ContactsService.swift in Sources */,
+				9A39C50F206A37900036BA02 /* ContactsViewModel.swift in Sources */,
+				9A39C515206A50790036BA02 /* NewContactViewModel.swift in Sources */,
+				9A39C511206A391B0036BA02 /* ContactsViewController.swift in Sources */,
+				9A39C51D206A5DBA0036BA02 /* ImageUploadState.swift in Sources */,
+				9A39C513206A4FB90036BA02 /* NewContactViewController.swift in Sources */,
+				607FACD81AFB9204008FA782 /* RepositoriesViewController.swift in Sources */,
+				9A39C50D206A365B0036BA02 /* ContactTableViewCell.swift in Sources */,
+				9A39C508206A32D90036BA02 /* ContactsState.swift in Sources */,
+				9A28A2E0205BF6F60051E02B /* RepositoriesService.swift in Sources */,
+				9A28A2E2205BF8210051E02B /* Repository.swift in Sources */,
+				9A39C506206A2F590036BA02 /* Contact.swift in Sources */,
+				9A39C51B206A5D580036BA02 /* ImageUploadResponse.swift in Sources */,
+				9A28A2DE205BF6900051E02B /* RepositoriesState.swift in Sources */,
+				9A39C517206A55250036BA02 /* NewContact.swift in Sources */,
+				9A39C520206A6F180036BA02 /* UIImage+Extensions.swift in Sources */,
+				9A28A2E4205BFA370051E02B /* RepositoriesViewModel.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
