@@ -181,9 +181,9 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIw-fJ-NgP">
-                                <rect key="frame" x="16" y="220" width="100" height="30"/>
+                                <rect key="frame" x="137.5" y="220" width="100" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="bdj-Bq-zEk"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="bdj-Bq-zEk"/>
                                 </constraints>
                                 <state key="normal" title="Select Image"/>
                             </button>
@@ -193,13 +193,6 @@
                                     <constraint firstAttribute="height" constant="377" id="J55-XZ-clR"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MH-Og-oBJ">
-                                <rect key="frame" x="259" y="220" width="100" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="ypC-PV-P62"/>
-                                </constraints>
-                                <state key="normal" title="Upload"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -208,13 +201,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="pm8-4x-NSl" secondAttribute="trailing" id="LX2-Hs-whu"/>
                             <constraint firstItem="QIw-fJ-NgP" firstAttribute="top" secondItem="1WM-oH-lw5" secondAttribute="bottom" constant="30" id="Ojv-Jf-Xc2"/>
                             <constraint firstItem="pm8-4x-NSl" firstAttribute="top" secondItem="QIw-fJ-NgP" secondAttribute="bottom" constant="20" id="Snw-MP-zky"/>
-                            <constraint firstItem="QIw-fJ-NgP" firstAttribute="leading" secondItem="R46-AV-1JG" secondAttribute="leadingMargin" id="TQx-D2-OBs"/>
-                            <constraint firstItem="7MH-Og-oBJ" firstAttribute="top" secondItem="1WM-oH-lw5" secondAttribute="bottom" constant="30" id="Urd-T8-1VG"/>
                             <constraint firstItem="ITV-PN-Sa5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1WM-oH-lw5" secondAttribute="bottom" id="X3U-2y-9JV"/>
-                            <constraint firstItem="7MH-Og-oBJ" firstAttribute="trailing" secondItem="R46-AV-1JG" secondAttribute="trailingMargin" id="Xjx-H2-ywh"/>
                             <constraint firstItem="1WM-oH-lw5" firstAttribute="leading" secondItem="R46-AV-1JG" secondAttribute="leadingMargin" id="h3H-w1-42D"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1WM-oH-lw5" secondAttribute="trailing" id="hgS-Qh-GLJ"/>
                             <constraint firstItem="1WM-oH-lw5" firstAttribute="top" secondItem="6Ae-B1-Dl9" secondAttribute="bottom" constant="16" id="klz-kv-vj3"/>
+                            <constraint firstItem="QIw-fJ-NgP" firstAttribute="centerX" secondItem="R46-AV-1JG" secondAttribute="centerX" id="mkb-vK-Hdj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New" id="lv7-6T-S49">
@@ -227,7 +218,6 @@
                         <outlet property="lastName" destination="4PO-Qu-MhK" id="sFV-Qe-8yj"/>
                         <outlet property="saveBtn" destination="AP0-Hd-5NQ" id="FAm-aq-jvJ"/>
                         <outlet property="selectImageBtn" destination="QIw-fJ-NgP" id="wBz-Ah-A5k"/>
-                        <outlet property="uploadBtn" destination="7MH-Og-oBJ" id="tjT-X5-ZPV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXc-lw-dxg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -246,7 +236,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="54F-U2-PYo">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="54F-U2-PYo">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" id="Hch-Ji-tSk">

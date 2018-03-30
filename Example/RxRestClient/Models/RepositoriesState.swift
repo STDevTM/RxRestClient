@@ -24,7 +24,7 @@ struct RepositoriesState: ResponseState {
 
     init(response: (HTTPURLResponse, String)) {
         if response.0.statusCode == 200 {
-            self.data = try! RepositoryResponse(JSONString: response.1).items
+            self.data = try? RepositoryResponse(JSONString: response.1).items
         }
     }
 

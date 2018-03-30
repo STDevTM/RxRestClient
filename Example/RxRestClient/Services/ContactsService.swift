@@ -20,19 +20,19 @@ class ContactsService {
     init() {
         var options = RxRestClientOptions.default
         options.addHeader(key: "x-apikey", value: "5ab9fa1af0a7555103cea80b")
-        client = RxRestClient(baseUrl: "https://rxrestdemo-f9a7.restdb.io/rest/", options: options)
+        client = RxRestClient(baseUrl: URL(string: "https://rxrestdemo-f9a7.restdb.io/"), options: options)
     }
 
     func get() -> Observable<ContactsState> {
-        return client.get("contacts")
+        return client.get("rest/contacts")
     }
 
     func create(contact: NewContact) -> Observable<DefaultState> {
-        return client.post("contacts", object: contact.toJSON())
+        return client.post("rest/contacts", object: contact.toJSON())
     }
 
     func update(contact: NewContact, for id: String) -> Observable<DefaultState> {
-        return client.put("contacts/\(id)", object: contact.toJSON())
+        return client.put("rest/contacts/\(id)", object: contact.toJSON())
     }
 
     func upload(image: UIImage) -> Observable<ImageUploadState> {
@@ -43,7 +43,7 @@ class ContactsService {
         let formDataBuilder = MultipartFormDataBuilder()
         formDataBuilder.add(data: data, name: "image", fileName: UUID().uuidString, mimeType: .jpeg)
 
-        return client.upload(builder: formDataBuilder, to: "https://rxrestdemo-f9a7.restdb.io/media")
+        return client.upload(builder: formDataBuilder, endpoint: "media")
 
     }
 

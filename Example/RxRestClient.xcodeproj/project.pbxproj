@@ -22,7 +22,6 @@
 		9A39C506206A2F590036BA02 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C505206A2F590036BA02 /* Contact.swift */; };
 		9A39C508206A32D90036BA02 /* ContactsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C507206A32D90036BA02 /* ContactsState.swift */; };
 		9A39C50A206A33DE0036BA02 /* ContactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C509206A33DE0036BA02 /* ContactsService.swift */; };
-		9A39C50D206A365B0036BA02 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C50C206A365B0036BA02 /* ContactTableViewCell.swift */; };
 		9A39C50F206A37900036BA02 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C50E206A37900036BA02 /* ContactsViewModel.swift */; };
 		9A39C511206A391B0036BA02 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C510206A391B0036BA02 /* ContactsViewController.swift */; };
 		9A39C513206A4FB90036BA02 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C512206A4FB90036BA02 /* NewContactViewController.swift */; };
@@ -65,7 +64,6 @@
 		9A39C505206A2F590036BA02 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		9A39C507206A32D90036BA02 /* ContactsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsState.swift; sourceTree = "<group>"; };
 		9A39C509206A33DE0036BA02 /* ContactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsService.swift; sourceTree = "<group>"; };
-		9A39C50C206A365B0036BA02 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		9A39C50E206A37900036BA02 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		9A39C510206A391B0036BA02 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		9A39C512206A4FB90036BA02 /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
@@ -208,7 +206,6 @@
 		9A28A2DA205BF63E0051E02B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9A39C50B206A36460036BA02 /* Cells */,
 				607FACD71AFB9204008FA782 /* RepositoriesViewController.swift */,
 				9A39C510206A391B0036BA02 /* ContactsViewController.swift */,
 				9A39C512206A4FB90036BA02 /* NewContactViewController.swift */,
@@ -237,14 +234,6 @@
 				9A39C509206A33DE0036BA02 /* ContactsService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		9A39C50B206A36460036BA02 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				9A39C50C206A365B0036BA02 /* ContactTableViewCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		9A39C51E206A6F070036BA02 /* Extensions */ = {
@@ -494,7 +483,6 @@
 				9A39C51D206A5DBA0036BA02 /* ImageUploadState.swift in Sources */,
 				9A39C513206A4FB90036BA02 /* NewContactViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* RepositoriesViewController.swift in Sources */,
-				9A39C50D206A365B0036BA02 /* ContactTableViewCell.swift in Sources */,
 				9A39C508206A32D90036BA02 /* ContactsState.swift in Sources */,
 				9A28A2E0205BF6F60051E02B /* RepositoriesService.swift in Sources */,
 				9A28A2E2205BF8210051E02B /* Repository.swift in Sources */,
