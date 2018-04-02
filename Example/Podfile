@@ -1,3 +1,5 @@
+platform :ios, '9.3'
+
 use_frameworks!
 
 target 'RxRestClient_Example' do
