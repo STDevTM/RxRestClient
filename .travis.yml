@@ -7,8 +7,8 @@ language: swift
 cache: cocoapods
 podfile: Example/Podfile
 before_install:
-# - gem install cocoapods # Since Travis is not always on latest version
-# - pod install --project-directory=Example --repo-update
+- gem install cocoapods # Since Travis is not always on latest version
+- pod install --project-directory=Example --repo-update
 script:
 # - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/RxRestClient.xcworkspace -scheme RxRestClient-Example -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.2' ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint
