@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary          = 'Simple REST Client based on RxSwift and Alamofire.'
 
   s.description      = <<-DESC
-  Simple REST Client based on RxSwift and Alamofire.
+  Reactive way to interct with REST API. Send request and get responses easily. Handling basic response cases by default, for example: Not Found, Unauthorized, etc.
                        DESC
 
   s.homepage         = 'https://github.com/stdevteam/RxRestClient'
