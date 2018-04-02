@@ -111,7 +111,7 @@ If `baseURL` is `nil` than it will try to convert provided `String` to `URL`.
 In order to use absalute url even when your client has `baseURL` you can provide `URL` like this:
 
 ```swift
-if let url = URL(string: "https://api.github.com/search/repositories") {}
+if let url = URL(string: "https://api.github.com/search/repositories") {
     client.get(url: url, query: ["q": search])
 }
 ```
