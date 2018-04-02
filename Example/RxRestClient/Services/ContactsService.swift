@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import RxRestClient
 import RxSwift
+import RxRestClient
 
 enum ContactsServiceError: Error {
     case imageLoadFailed
