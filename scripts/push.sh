@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-pod trunk push
+source ~/.rvm/scripts/rvm
+rvm use default
+# pod trunk push
