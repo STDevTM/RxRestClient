@@ -511,13 +511,13 @@ open class RxRestClient {
     private static func checkBaseResponse(_ httpResponse: HTTPURLResponse, _ string: String) -> BaseResponse? {
         switch httpResponse.statusCode {
         case 400:
-            return .badRequest
+            return .badRequest(body: string)
         case 401:
-            return .unauthorized
+            return .unauthorized(body: string)
         case 403:
-            return .forbidden
+            return .forbidden(body: string)
         case 404:
-            return .notFound
+            return .notFound(body: string)
         case 422:
             return .validationProblem(error: string)
         case 500..<600:
@@ -536,14 +536,14 @@ open class RxRestClient {
         switch response {
         case .serviceOffline:
             return BaseState.offline
-        case .badRequest:
-            return BaseState.badRequestState
-        case .unauthorized:
-            return BaseState.unauthorizedState
-        case .forbidden:
-            return BaseState.forbiddenState
-        case .notFound:
-            return BaseState.notFoundState
+        case let .badRequest(body: body):
+            return BaseState(badRequest: body)
+        case let .unauthorized(body: body):
+            return BaseState(unauthorized: body)
+        case let .forbidden(body: body):
+            return BaseState(forbidden: body)
+        case let .notFound(body: body):
+            return BaseState(notFound: body)
         case let .validationProblem(error: error):
             return BaseState(validationProblem: error)
         case let .unexpectedError(error: error):

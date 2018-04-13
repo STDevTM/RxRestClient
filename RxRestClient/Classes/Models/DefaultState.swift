@@ -18,7 +18,7 @@ public struct DefaultState: ResponseState {
 
     public init(response: (HTTPURLResponse, String)) {
         self.state = BaseState.online
-        self.success = 200 <= response.0.statusCode && response.0.statusCode < 300
+        self.success = (200..<300).contains(response.0.statusCode)
     }
 
     public static let empty = DefaultState(state: BaseState.empty)
