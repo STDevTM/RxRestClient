@@ -11,13 +11,13 @@ public struct BaseState {
 
     public var serviceState: ServiceState
 
-    public var badRequest: Bool?
+    public var badRequest: String?
 
-    public var unauthorized: Bool?
+    public var unauthorized: String?
 
-    public var forbidden: Bool?
+    public var forbidden: String?
 
-    public var notFound: Bool?
+    public var notFound: String?
 
     public var validationProblem: String?
 
@@ -25,10 +25,10 @@ public struct BaseState {
 
     public init(
         serviceState: ServiceState = .online,
-        badRequest: Bool? = nil,
-        unauthorized: Bool? = nil,
-        forbidden: Bool? = nil,
-        notFound: Bool? = nil,
+        badRequest: String? = nil,
+        unauthorized: String? = nil,
+        forbidden: String? = nil,
+        notFound: String? = nil,
         validationProblem: String? = nil,
         unexpectedError: String? = nil
         ) {
@@ -42,14 +42,6 @@ public struct BaseState {
     }
 
     public static let empty = BaseState()
-
-    public static let badRequestState = BaseState(badRequest: true)
-
-    public static let unauthorizedState = BaseState(unauthorized: true)
-
-    public static let forbiddenState = BaseState(forbidden: true)
-
-    public static let notFoundState = BaseState(notFound: true)
 
     public static let offline = BaseState(serviceState: .offline)
 
