@@ -11,8 +11,8 @@ public class DebugRxRestClientLogger: RxRestClientLogger {
 
     public init() {}
 
-    public func log(_ value: Any) {
-        debugPrint(value)
+    public func log(_ value: Any?) {
+        debugPrint(value ?? "nil")
     }
 
 }

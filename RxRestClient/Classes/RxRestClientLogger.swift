@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol RxRestClientLogger {
-    func log(_ value: Any)
+    func log(_ value: Any?)
 }

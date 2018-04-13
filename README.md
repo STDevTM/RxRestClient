@@ -119,7 +119,9 @@ if let url = URL(string: "https://api.github.com/search/repositories") {
 
 ### Logger
 
+In order to log `curl` command of sent request you can use `RxRestClientOptions.logger` option. For just printing debug description to console you can use builtin `DebugRxRestClientLogger` logger.
 
+If you prefer to have a custom logger, for example, log requests to the file, you need to implement `RxRestClientLogger` protocol and pass it as an option.
 
 ## Author
 
