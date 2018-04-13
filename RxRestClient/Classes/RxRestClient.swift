@@ -19,6 +19,7 @@ public struct RxRestClientOptions {
     public var retryCount = 3
     public var headers = ["Content-Type": "application/json"]
     public var maxConcurrentOperationCount = 2
+    public var logger: RxRestClientLogger?
 
     public static let `default` = RxRestClientOptions()
 
@@ -304,7 +305,8 @@ open class RxRestClient {
     public func run<T: ResponseState>(_ request: Observable<DataRequest>) -> Observable<T> {
 
         return request
-            .flatMap { request -> Observable<(HTTPURLResponse, String)> in
+            .flatMap { [options] request -> Observable<(HTTPURLResponse, String)> in
+                options.logger?.log(request)
                 return request.rx.responseString()
             }
             .retry(options.retryCount)
@@ -551,7 +553,7 @@ open class RxRestClient {
         }
     }
 
-    /// Build URl from `endpoint` and `baseUrl`.
+    /// Build URL from `endpoint` and `baseUrl`.
     /// This will try to convert `endpoint` parameter to URL if `baseUrl` is nil.
     /// - Parameter endpoint: Relative path of endpoint.
     /// - Returns: Built optional URL.

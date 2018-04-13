@@ -20,6 +20,7 @@ class ContactsService {
     init() {
         var options = RxRestClientOptions.default
         options.addHeader(key: "x-apikey", value: "5ab9fa1af0a7555103cea80b")
+        options.logger = DebugRxRestClientLogger()
         client = RxRestClient(baseUrl: URL(string: "https://rxrestdemo-f9a7.restdb.io/"), options: options)
     }
 
