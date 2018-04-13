@@ -33,9 +33,13 @@ public struct RxRestClientOptions {
 
     /// Adding Authorization header
     ///
-    /// - Parameter token: token string which will be added as a Authorization header with Bearer prefix
-    public mutating func addAuth(token: String) {
-        self.addHeader(key: "Authorization", value: "Bearer " + token)
+    /// - Parameter token: token string which will be added as a Authorization header with custom prefix
+    public mutating func addAuth(token: String, prefix: String? = nil) {
+        var prefixKey = (prefix ?? "")
+        if !prefixKey.isEmpty {
+            prefixKey += " "
+        }
+        self.addHeader(key: "Authorization", value: prefixKey + token)
     }
 }
 
