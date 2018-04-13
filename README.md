@@ -33,6 +33,7 @@ pod 'RxRestClient'
 * Handle network reachability status
 * Retry on become reachable
 * Ability to use absalute and relative urls
+* Logger
 * _more coming soon_
 
 ## How to use
@@ -115,6 +116,10 @@ if let url = URL(string: "https://api.github.com/search/repositories") {
     client.get(url: url, query: ["q": search])
 }
 ```
+
+### Logger
+
+
 
 ## Author
 
