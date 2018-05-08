@@ -220,7 +220,7 @@ open class RxRestClient {
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
     ///   - array: array representing body of request, default value is empty
     /// - Returns: An observable of a the response state
-    public func delete<T: ResponseState>(_ endpoint: String, array: [Any] = []) -> Observable<T> {
+    public func delete<T: ResponseState>(_ endpoint: String, array: [Any]) -> Observable<T> {
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
         }
@@ -233,7 +233,7 @@ open class RxRestClient {
     ///   - url: absalute url
     ///   - array: array representing body of request, default value is empty
     /// - Returns: An observable of a the response state
-    public func delete<T: ResponseState>(url: URL, array: [Any] = []) -> Observable<T> {
+    public func delete<T: ResponseState>(url: URL, array: [Any]) -> Observable<T> {
         return run(request(.delete, url, array: array))
     }
 
