@@ -74,7 +74,7 @@
 		9A39C51F206A6F180036BA02 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		A42DAEEC8A3AEE1412D49087 /* Pods-RxRestClient_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxRestClient_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxRestClient_Example/Pods-RxRestClient_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		A69909A321AE479CD71890C3 /* Pods_RxRestClient_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxRestClient_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5407349FC1D9AC921C11477 /* RxRestClient.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RxRestClient.podspec; path = ../RxRestClient.podspec; sourceTree = "<group>"; };
+		C5407349FC1D9AC921C11477 /* RxRestClient.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RxRestClient.podspec; path = ../RxRestClient.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C8286D04B278F325D5FEBCD8 /* Pods_RxRestClient_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxRestClient_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2D69DA486E24050EF561D90 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
