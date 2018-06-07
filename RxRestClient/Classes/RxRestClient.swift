@@ -20,6 +20,8 @@ public struct RxRestClientOptions {
     public var headers = ["Content-Type": "application/json"]
     public var maxConcurrentOperationCount = 2
     public var logger: RxRestClientLogger?
+    public var urlEncoding = URLEncoding.default
+    public var jsonEncoding = JSONEncoding.default
 
     public static let `default` = RxRestClientOptions()
 
@@ -258,7 +260,7 @@ open class RxRestClient {
     ///   - query: dictinary representing query of request, default value is empty
     /// - Returns: An observable of a the response state
     public func get<T: ResponseState>(url: URL, query: [String: Any] = [:]) -> Observable<T> {
-        return run(request(.get, url, object: query, encoding: URLEncoding.default))
+        return run(request(.get, url, object: query, encoding: options.urlEncoding))
     }
 
     // MARK: - Request builder
@@ -270,12 +272,12 @@ open class RxRestClient {
     ///   - object: A dictionary containing all necessary options
     ///   - encoding: The kind of encoding used to process parameters
     /// - Returns: An observable of a the created DataRequest
-    public func request(_ method: HTTPMethod, _ url: URLConvertible, object: [String: Any], encoding: ParameterEncoding = JSONEncoding.default) -> Observable<DataRequest> {
+    public func request(_ method: HTTPMethod, _ url: URLConvertible, object: [String: Any], encoding: ParameterEncoding? = nil) -> Observable<DataRequest> {
         return RxAlamofire.request(
             method,
             url,
             parameters: object,
-            encoding: encoding,
+            encoding: encoding ?? options.jsonEncoding,
             headers: options.headers
         )
     }
