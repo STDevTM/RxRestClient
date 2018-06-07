@@ -20,8 +20,8 @@ public struct RxRestClientOptions {
     public var headers = ["Content-Type": "application/json"]
     public var maxConcurrentOperationCount = 2
     public var logger: RxRestClientLogger?
-    public var urlEncoding = URLEncoding.default
-    public var jsonEncoding = JSONEncoding.default
+    public var urlEncoding: ParameterEncoding = URLEncoding.default
+    public var jsonEncoding: ParameterEncoding = JSONEncoding.default
 
     public static let `default` = RxRestClientOptions()
 
