@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RxRestClient'
-  s.version          = '0.1.6'
+  s.version          = '0.1.7'
   s.summary          = 'Simple REST Client based on RxSwift and Alamofire.'
 
   s.description      = <<-DESC
@@ -21,9 +21,9 @@ Pod::Spec.new do |s|
   #   'RxRestClient' => ['RxRestClient/Assets/*.png']
   # }
 
-  s.dependency 'RxSwift', '~> 4.1.2'
-  s.dependency 'RxCocoa', '~> 4.1.2'
-  s.dependency 'Alamofire', '~> 4.6.0'
-  s.dependency 'RxAlamofire', '~> 4.1.0'
+  s.dependency 'RxSwift', '~> 4'
+  s.dependency 'RxCocoa', '~> 4'
+  s.dependency 'Alamofire', '~> 4'
+  s.dependency 'RxAlamofire', '~> 4'
 
 end
