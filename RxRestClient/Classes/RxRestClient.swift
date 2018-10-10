@@ -128,22 +128,12 @@ open class RxRestClient {
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
     ///   - body: Encodable model representing body of request
     /// - Returns: An observable of a the response state
-//    public func post<T: ResponseState>(_ endpoint: String, body: Encodable) -> Observable<T> {
-//        guard let url = buildURL(endpoint) else {
-//            return Observable.error(RxRestClientError.urlBuildFailed)
-//        }
-//        return post(url: url, body: body)
-//    }
-
-    /// Do POST Request
-    ///
-    /// - Parameters:
-    ///   - url: absalute url
-    ///   - body: Encodable model representing body of request
-    /// - Returns: An observable of a the response state
-//    public func post<T: ResponseState>(url: URL, body: Encodable) -> Observable<T> {
-//        return run(request(.post, url, object: body.dictionary))
-//    }
+    public func post<T: ResponseState>(_ endpoint: String, body: Encodable) -> Observable<T> {
+        guard let url = buildURL(endpoint) else {
+            return Observable.error(RxRestClientError.urlBuildFailed)
+        }
+        return post(url: url, object: body.dictionary)
+    }
 
     // MARK: - PUT Requests
     /// Do PUT Request
@@ -198,22 +188,12 @@ open class RxRestClient {
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
     ///   - body: Encodable model representing body of request
     /// - Returns: An observable of a the response state
-//    public func put<T: ResponseState>(_ endpoint: String, body: Encodable) -> Observable<T> {
-//        guard let url = buildURL(endpoint) else {
-//            return Observable.error(RxRestClientError.urlBuildFailed)
-//        }
-//        return put(url: url, body: body)
-//    }
-
-    /// Do PUT Request
-    ///
-    /// - Parameters:
-    ///   - url: absalute url
-    ///   - body: Encodable model representing body of request
-    /// - Returns: An observable of a the response state
-//    public func put<T: ResponseState>(url: URL, body: Encodable) -> Observable<T> {
-//        return run(request(.put, url, object: body.dictionary))
-//    }
+    public func put<T: ResponseState>(_ endpoint: String, body: Encodable) -> Observable<T> {
+        guard let url = buildURL(endpoint) else {
+            return Observable.error(RxRestClientError.urlBuildFailed)
+        }
+        return put(url: url, object: body.dictionary)
+    }
 
     // MARK: - PATCH Requests
     /// Do PATCH Request
@@ -245,22 +225,12 @@ open class RxRestClient {
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
     ///   - body: Encodable model representing body of request
     /// - Returns: An observable of a the response state
-//    public func patch<T: ResponseState>(_ endpoint: String, body: Encodable) -> Observable<T> {
-//        guard let url = buildURL(endpoint) else {
-//            return Observable.error(RxRestClientError.urlBuildFailed)
-//        }
-//        return patch(url: url, body: body)
-//    }
-
-    /// Do PATCH Request
-    ///
-    /// - Parameters:
-    ///   - url: absalute url
-    ///   - body: Encodable model representing body of request
-    /// - Returns: An observable of a the response state
-//    public func patch<T: ResponseState>(url: URL, body: Encodable) -> Observable<T> {
-//        return run(request(.patch, url, object: body.dictionary))
-//    }
+    public func patch<T: ResponseState>(_ endpoint: String, body: Encodable) -> Observable<T> {
+        guard let url = buildURL(endpoint) else {
+            return Observable.error(RxRestClientError.urlBuildFailed)
+        }
+        return patch(url: url, object: body.dictionary)
+    }
 
     // MARK: - DELETE Requests
     /// Do DELETE Request
@@ -315,22 +285,12 @@ open class RxRestClient {
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
     ///   - body: Encodable model representing body of request
     /// - Returns: An observable of a the response state
-//    public func delete<T: ResponseState>(_ endpoint: String, body: Encodable) -> Observable<T> {
-//        guard let url = buildURL(endpoint) else {
-//            return Observable.error(RxRestClientError.urlBuildFailed)
-//        }
-//        return delete(url: url, body: body)
-//    }
-
-    /// Do DELETE Request
-    ///
-    /// - Parameters:
-    ///   - url: absalute url
-    ///   - body: Encodable model representing body of request
-    /// - Returns: An observable of a the response state
-//    public func delete<T: ResponseState>(url: URL, body: Encodable) -> Observable<T> {
-//        return run(request(.delete, url, object: body.dictionary))
-//    }
+    public func delete<T: ResponseState>(_ endpoint: String, body: Encodable) -> Observable<T> {
+        guard let url = buildURL(endpoint) else {
+            return Observable.error(RxRestClientError.urlBuildFailed)
+        }
+        return delete(url: url, object: body.dictionary)
+    }
 
     // MARK: - GET Requests
     /// Do GET Request
