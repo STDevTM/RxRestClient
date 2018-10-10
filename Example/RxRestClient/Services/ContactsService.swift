@@ -37,7 +37,7 @@ class ContactsService {
     }
 
     func upload(image: UIImage) -> Observable<ImageUploadState> {
-        guard let data = UIImageJPEGRepresentation(image, 0.7) else {
+        guard let data = image.jpegData(compressionQuality: 0.7) else {
             return Observable.error(ContactsServiceError.imageLoadFailed)
         }
 
