@@ -37,9 +37,15 @@ class ContactsService {
     }
 
     func upload(image: UIImage) -> Observable<ImageUploadState> {
+        #if swift(>=4.2)
+        guard let data = image.jpegData(compressionQuality: 0.7) else {
+            return Observable.error(ContactsServiceError.imageLoadFailed)
+        }
+        #else
         guard let data = UIImageJPEGRepresentation(image, 0.7) else {
             return Observable.error(ContactsServiceError.imageLoadFailed)
         }
+        #endif
 
         let formDataBuilder = MultipartFormDataBuilder()
         formDataBuilder.add(data: data, name: "image", fileName: UUID().uuidString, mimeType: .jpeg)

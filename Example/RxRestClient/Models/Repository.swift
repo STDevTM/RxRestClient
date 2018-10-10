@@ -7,30 +7,22 @@
 //
 
 import Foundation
-import ObjectMapper
 
-class Repository: ImmutableMappable {
+struct Repository: Decodable {
 
     let id: Int
     let name: String
     let description: String?
     let url: String
 
-    required init(map: Map) throws {
-        id = try map.value("id")
-        name = try map.value("name")
-        description = try? map.value("description")
-        url = try map.value("url")
-    }
-
 }
 
-class RepositoryResponse: ImmutableMappable {
+struct RepositoryResponse: Decodable {
     let totalCount: Int
     let items: [Repository]
 
-    required init(map: Map) throws {
-        totalCount = try map.value("total_count")
-        items = try map.value("items")
+    private enum CodingKeys: String, CodingKey {
+        case totalCount = "total_count"
+        case items
     }
 }

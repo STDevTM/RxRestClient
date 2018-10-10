@@ -8,9 +8,18 @@
 import Foundation
 
 public protocol ResponseState {
+
+    associatedtype Body: ResponseBody
+
     var state: BaseState? { get }
 
     init(state: BaseState)
-    
-    init(response: (HTTPURLResponse, String))
+
+    init(response: (HTTPURLResponse, Body?))
+
 }
+
+public protocol ResponseBody { }
+
+extension String: ResponseBody { }
+extension Data: ResponseBody { }

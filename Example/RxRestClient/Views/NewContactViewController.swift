@@ -138,7 +138,11 @@ class NewContactViewController: UIViewController {
     private func presentImagePicker() {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        #if swift(>=4.2)
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        #else
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        #endif
         imagePicker.allowsEditing = false
 
         self.present(imagePicker, animated: true, completion: nil)
@@ -146,6 +150,15 @@ class NewContactViewController: UIViewController {
 }
 
 extension NewContactViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    #if swift(>=4.2)
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            viewModel.image.value = pickedImage
+        }
+
+        dismiss(animated: true, completion: nil)
+    }
+    #else
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             viewModel.image.value = pickedImage
@@ -153,6 +166,7 @@ extension NewContactViewController: UIImagePickerControllerDelegate, UINavigatio
 
         dismiss(animated: true, completion: nil)
     }
+    #endif
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
