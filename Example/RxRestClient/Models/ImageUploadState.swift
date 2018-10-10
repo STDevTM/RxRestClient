@@ -11,6 +11,8 @@ import RxRestClient
 
 struct ImageUploadState: ResponseState {
 
+    typealias Body = String
+
     var state: BaseState? = nil
     var response: ImageUploadResponse? = nil
     var tooLarge: Bool? = nil
@@ -20,11 +22,13 @@ struct ImageUploadState: ResponseState {
 
     }
 
-    init(response: (HTTPURLResponse, String)) {
+    init(response: (HTTPURLResponse, String?)) {
         self.state = BaseState.online
         switch response.0.statusCode {
         case 200..<300:
-            self.response = try? ImageUploadResponse(JSONString: response.1)
+            if let body = response.1 {
+                self.response = try? ImageUploadResponse(JSONString: body)
+            }
         case 413:
             self.tooLarge = true
         default:

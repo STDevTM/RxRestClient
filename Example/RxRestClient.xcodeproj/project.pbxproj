@@ -30,6 +30,7 @@
 		9A39C51B206A5D580036BA02 /* ImageUploadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C51A206A5D580036BA02 /* ImageUploadResponse.swift */; };
 		9A39C51D206A5DBA0036BA02 /* ImageUploadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C51C206A5DBA0036BA02 /* ImageUploadState.swift */; };
 		9A39C520206A6F180036BA02 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39C51F206A6F180036BA02 /* UIImage+Extensions.swift */; };
+		9AA8F500216E0FED00F56506 /* RepositoryQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8F4FF216E0FED00F56506 /* RepositoryQuery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		9A39C51A206A5D580036BA02 /* ImageUploadResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadResponse.swift; sourceTree = "<group>"; };
 		9A39C51C206A5DBA0036BA02 /* ImageUploadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadState.swift; sourceTree = "<group>"; };
 		9A39C51F206A6F180036BA02 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		9AA8F4FF216E0FED00F56506 /* RepositoryQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryQuery.swift; sourceTree = "<group>"; };
 		A42DAEEC8A3AEE1412D49087 /* Pods-RxRestClient_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxRestClient_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxRestClient_Example/Pods-RxRestClient_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		A69909A321AE479CD71890C3 /* Pods_RxRestClient_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxRestClient_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5407349FC1D9AC921C11477 /* RxRestClient.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RxRestClient.podspec; path = ../RxRestClient.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -218,6 +220,7 @@
 			children = (
 				9A28A2DD205BF6900051E02B /* RepositoriesState.swift */,
 				9A28A2E1205BF8210051E02B /* Repository.swift */,
+				9AA8F4FF216E0FED00F56506 /* RepositoryQuery.swift */,
 				9A39C505206A2F590036BA02 /* Contact.swift */,
 				9A39C507206A32D90036BA02 /* ContactsState.swift */,
 				9A39C516206A55250036BA02 /* NewContact.swift */,
@@ -452,6 +455,7 @@
 				9A39C513206A4FB90036BA02 /* NewContactViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* RepositoriesViewController.swift in Sources */,
 				9A39C508206A32D90036BA02 /* ContactsState.swift in Sources */,
+				9AA8F500216E0FED00F56506 /* RepositoryQuery.swift in Sources */,
 				9A28A2E0205BF6F60051E02B /* RepositoriesService.swift in Sources */,
 				9A28A2E2205BF8210051E02B /* Repository.swift in Sources */,
 				9A39C506206A2F590036BA02 /* Contact.swift in Sources */,

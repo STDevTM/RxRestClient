@@ -11,26 +11,26 @@ public struct BaseState {
 
     public var serviceState: ServiceState
 
-    public var badRequest: String?
+    public var badRequest: Any?
 
-    public var unauthorized: String?
+    public var unauthorized: Any?
 
-    public var forbidden: String?
+    public var forbidden: Any?
 
-    public var notFound: String?
+    public var notFound: Any?
 
-    public var validationProblem: String?
+    public var validationProblem: Any?
 
-    public var unexpectedError: String?
+    public var unexpectedError: Any?
 
     public init(
         serviceState: ServiceState = .online,
-        badRequest: String? = nil,
-        unauthorized: String? = nil,
-        forbidden: String? = nil,
-        notFound: String? = nil,
-        validationProblem: String? = nil,
-        unexpectedError: String? = nil
+        badRequest: Any? = nil,
+        unauthorized: Any? = nil,
+        forbidden: Any? = nil,
+        notFound: Any? = nil,
+        validationProblem: Any? = nil,
+        unexpectedError: Any? = nil
         ) {
         self.serviceState = serviceState
         self.badRequest = badRequest
@@ -49,14 +49,14 @@ public struct BaseState {
 
 }
 
-extension BaseState: Equatable {
-    public static func == (lhs: BaseState, rhs: BaseState) -> Bool {
-        return lhs.serviceState == rhs.serviceState
-            && lhs.badRequest == rhs.badRequest
-            && lhs.unauthorized == rhs.unauthorized
-            && lhs.forbidden == rhs.forbidden
-            && lhs.notFound == rhs.notFound
-            && lhs.validationProblem == rhs.validationProblem
-            && lhs.unexpectedError == rhs.unexpectedError
-    }
-}
+//extension BaseState: Equatable {
+//    public static func == (lhs: BaseState, rhs: BaseState) -> Bool {
+//        return lhs.serviceState == rhs.serviceState
+//            && lhs.badRequest == rhs.badRequest
+//            && lhs.unauthorized == rhs.unauthorized
+//            && lhs.forbidden == rhs.forbidden
+//            && lhs.notFound == rhs.notFound
+//            && lhs.validationProblem == rhs.validationProblem
+//            && lhs.unexpectedError == rhs.unexpectedError
+//    }
+//}
