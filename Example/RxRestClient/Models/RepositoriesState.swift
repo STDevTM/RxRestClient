@@ -11,6 +11,8 @@ import RxRestClient
 
 struct RepositoriesState: ResponseState {
 
+    typealias Body = Data
+
     var state: BaseState?
     var data: [Repository]?
 
@@ -22,9 +24,9 @@ struct RepositoriesState: ResponseState {
         self.state = state
     }
 
-    init(response: (HTTPURLResponse, String)) {
-        if response.0.statusCode == 200 {
-            self.data = try? RepositoryResponse(JSONString: response.1).items
+    init(response: (HTTPURLResponse, Data?)) {
+        if response.0.statusCode == 200, let body = response.1 {
+            self.data = try? JSONDecoder().decode(RepositoryResponse.self, from: body).items
         }
     }
 
