@@ -8,6 +8,9 @@
 import Foundation
 
 public struct DefaultState: ResponseState {
+
+    public typealias Body = Data
+
     public var success: Bool?
     public var state: BaseState?
 
@@ -16,7 +19,7 @@ public struct DefaultState: ResponseState {
         self.success = false
     }
 
-    public init(response: (HTTPURLResponse, String)) {
+    public init(response: (HTTPURLResponse, Data?)) {
         self.state = BaseState.online
         self.success = (200..<300).contains(response.0.statusCode)
     }

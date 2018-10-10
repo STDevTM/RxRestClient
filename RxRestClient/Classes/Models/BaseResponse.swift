@@ -19,15 +19,15 @@ import Foundation
 public enum BaseResponse {
     case serviceOffline
 
-    case badRequest(body: String)
+    case badRequest(body: Any?)
 
-    case unauthorized(body: String)
+    case unauthorized(body: Any?)
 
-    case forbidden(body: String)
+    case forbidden(body: Any?)
 
-    case notFound(body: String)
+    case notFound(body: Any?)
 
-    case validationProblem(error: String)
+    case validationProblem(error: Any?)
 
-    case unexpectedError(error: String)
+    case unexpectedError(error: Any?)
 }

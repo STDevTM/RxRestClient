@@ -19,9 +19,10 @@ class RepositoriesViewModel {
         repositoriesState = search
             .asDriver()
             .debounce(0.3)
+            .map { RepositoryQuery(q: $0) }
             .flatMapLatest {
-                service.get(search: $0)
-                    .asDriver(onErrorJustReturn: RepositoriesState.empty)
+                service.get(query: $0)
+                    .asDriver(onErrorDriveWith: .never())
             }
     }
 
