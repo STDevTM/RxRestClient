@@ -34,6 +34,7 @@ pod 'RxRestClient'
 * Retry on become reachable
 * Ability to use absalute and relative urls
 * Logger
+* Swift Codable protocol support
 * _more coming soon_
 
 ## How to use
@@ -42,6 +43,8 @@ First of all you need to create `struct` of your response state and implement `R
 
 ```swift
 struct RepositoriesState: ResponseState {
+
+    typealias Body = Data
 
     var state: BaseState?
     var data: [Repository]?
@@ -54,14 +57,25 @@ struct RepositoriesState: ResponseState {
         self.state = state
     }
 
-    init(response: (HTTPURLResponse, String)) {
-        if response.0.statusCode == 200 {
-            self.data = try? RepositoryResponse(JSONString: response.1).items
+    init(response: (HTTPURLResponse, Data?)) {
+        if response.0.statusCode == 200, let body = response.1 {
+            self.data = try? JSONDecoder().decode(RepositoryResponse.self, from: body).items
         }
     }
 
     static let empty = RepositoriesState()
 }
+```
+
+It is required to mention expected Body type (`String` or `Data`).
+
+After that you need to create request model:
+
+```swift
+struct RepositoryQuery: Encodable {
+    let q: String
+}
+
 ```
 
 Than you can do the request to get repositories:
@@ -71,15 +85,15 @@ import RxSwift
 import RxRestClient
 
 protocol RepositoriesServiceProtocol {
-    func get(search: String) -> Observable<RepositoriesState>
+    func get(query: RepositoryQuery) -> Observable<RepositoriesState>
 }
 
-class RepositoriesService: RepositoriesServiceProtocol {
+final class RepositoriesService: RepositoriesServiceProtocol {
 
     private let client = RxRestClient()
 
-    func get(search: String) -> Observable<RepositoriesState> {
-        return client.get("https://api.github.com/search/repositories", query: ["q": search])
+    func get(query: RepositoryQuery) -> Observable<RepositoriesState> {
+        return client.get("https://api.github.com/search/repositories", query: query)
     }
 }
 

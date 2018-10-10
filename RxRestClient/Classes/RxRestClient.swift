@@ -22,6 +22,7 @@ public struct RxRestClientOptions {
     public var logger: RxRestClientLogger?
     public var urlEncoding: ParameterEncoding = URLEncoding.default
     public var jsonEncoding: ParameterEncoding = JSONEncoding.default
+    public var jsonDecoder: JSONDecoder = JSONDecoder()
 
     public static let `default` = RxRestClientOptions()
 
@@ -121,6 +122,29 @@ open class RxRestClient {
         return run(request(.post, url, array: array))
     }
 
+    /// Do POST Request
+    ///
+    /// - Parameters:
+    ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
+    ///   - body: Encodable model representing body of request
+    /// - Returns: An observable of a the response state
+//    public func post<T: ResponseState>(_ endpoint: String, body: Encodable) -> Observable<T> {
+//        guard let url = buildURL(endpoint) else {
+//            return Observable.error(RxRestClientError.urlBuildFailed)
+//        }
+//        return post(url: url, body: body)
+//    }
+
+    /// Do POST Request
+    ///
+    /// - Parameters:
+    ///   - url: absalute url
+    ///   - body: Encodable model representing body of request
+    /// - Returns: An observable of a the response state
+//    public func post<T: ResponseState>(url: URL, body: Encodable) -> Observable<T> {
+//        return run(request(.post, url, object: body.dictionary))
+//    }
+
     // MARK: - PUT Requests
     /// Do PUT Request
     ///
@@ -168,6 +192,29 @@ open class RxRestClient {
         return run(request(.put, url, array: array))
     }
 
+    /// Do PUT Request
+    ///
+    /// - Parameters:
+    ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
+    ///   - body: Encodable model representing body of request
+    /// - Returns: An observable of a the response state
+//    public func put<T: ResponseState>(_ endpoint: String, body: Encodable) -> Observable<T> {
+//        guard let url = buildURL(endpoint) else {
+//            return Observable.error(RxRestClientError.urlBuildFailed)
+//        }
+//        return put(url: url, body: body)
+//    }
+
+    /// Do PUT Request
+    ///
+    /// - Parameters:
+    ///   - url: absalute url
+    ///   - body: Encodable model representing body of request
+    /// - Returns: An observable of a the response state
+//    public func put<T: ResponseState>(url: URL, body: Encodable) -> Observable<T> {
+//        return run(request(.put, url, object: body.dictionary))
+//    }
+
     // MARK: - PATCH Requests
     /// Do PATCH Request
     ///
@@ -191,6 +238,29 @@ open class RxRestClient {
     public func patch<T: ResponseState>(url: URL, object: [String: Any]) -> Observable<T> {
         return run(request(.patch, url, object: object))
     }
+
+    /// Do PATCH Request
+    ///
+    /// - Parameters:
+    ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
+    ///   - body: Encodable model representing body of request
+    /// - Returns: An observable of a the response state
+//    public func patch<T: ResponseState>(_ endpoint: String, body: Encodable) -> Observable<T> {
+//        guard let url = buildURL(endpoint) else {
+//            return Observable.error(RxRestClientError.urlBuildFailed)
+//        }
+//        return patch(url: url, body: body)
+//    }
+
+    /// Do PATCH Request
+    ///
+    /// - Parameters:
+    ///   - url: absalute url
+    ///   - body: Encodable model representing body of request
+    /// - Returns: An observable of a the response state
+//    public func patch<T: ResponseState>(url: URL, body: Encodable) -> Observable<T> {
+//        return run(request(.patch, url, object: body.dictionary))
+//    }
 
     // MARK: - DELETE Requests
     /// Do DELETE Request
@@ -239,6 +309,29 @@ open class RxRestClient {
         return run(request(.delete, url, array: array))
     }
 
+    /// Do DELETE Request
+    ///
+    /// - Parameters:
+    ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
+    ///   - body: Encodable model representing body of request
+    /// - Returns: An observable of a the response state
+//    public func delete<T: ResponseState>(_ endpoint: String, body: Encodable) -> Observable<T> {
+//        guard let url = buildURL(endpoint) else {
+//            return Observable.error(RxRestClientError.urlBuildFailed)
+//        }
+//        return delete(url: url, body: body)
+//    }
+
+    /// Do DELETE Request
+    ///
+    /// - Parameters:
+    ///   - url: absalute url
+    ///   - body: Encodable model representing body of request
+    /// - Returns: An observable of a the response state
+//    public func delete<T: ResponseState>(url: URL, body: Encodable) -> Observable<T> {
+//        return run(request(.delete, url, object: body.dictionary))
+//    }
+
     // MARK: - GET Requests
     /// Do GET Request
     ///
@@ -263,8 +356,21 @@ open class RxRestClient {
         return run(request(.get, url, object: query, encoding: options.urlEncoding))
     }
 
+    /// Do GET Request
+    ///
+    /// - Parameters:
+    ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
+    ///   - query: Encodable model representing query of request
+    /// - Returns: An observable of a the response state
+    public func get<T: ResponseState>(_ endpoint: String, query: Encodable) -> Observable<T> {
+        guard let url = buildURL(endpoint) else {
+            return Observable.error(RxRestClientError.urlBuildFailed)
+        }
+        return get(url: url, query: query.dictionary)
+    }
+
     // MARK: - Request builder
-    /// Build and return An observable of a the DataRequest
+    /// Build and return an observable of a the DataRequest
     ///
     /// - Parameters:
     ///   - method: Alamofire method object (example: .get, post, etc)
@@ -282,7 +388,7 @@ open class RxRestClient {
         )
     }
 
-    /// Build and return An observable of a the DataRequest
+    /// Build and return an observable of a the DataRequest
     ///
     /// - Parameters:
     ///   - method: Alamofire method object (example: .get, post, etc)
@@ -305,20 +411,25 @@ open class RxRestClient {
     /// - Parameter request: An observable of the DataRequest
     /// - Returns: An observable of a the response state
     public func run<T: ResponseState>(_ request: Observable<DataRequest>) -> Observable<T> {
-
         return request
-            .flatMap { [options] request -> Observable<(HTTPURLResponse, String)> in
+            .flatMap { [options] request -> Observable<(HTTPURLResponse, T.Body?)> in
                 options.logger?.log(request)
-                return request.rx.responseString()
+
+                switch T.Body.self {
+                case is String.Type:
+                    return request.rx.responseString().map { ($0.0, $0.1 as? T.Body) }
+                default:
+                    return request.rx.responseData().map { ($0.0, $0.1 as? T.Body) }
+                }
             }
             .retry(options.retryCount)
             .observeOn(backgroundWorkScheduler)
-            .map { (httpResponse, string) -> RestResponseStatus in
+            .map { (httpResponse, body) -> RestResponseStatus in
 
-                if let response = RxRestClient.checkBaseResponse(httpResponse, string) {
+                if let response = RxRestClient.checkBaseResponse(httpResponse, body) {
                     return .base(state: RxRestClient.checkBaseState(response: response))
                 } else {
-                    return .custom(response: (httpResponse, string))
+                    return .custom(response: (httpResponse, body))
                 }
             }
             .retryOnBecomesReachable(.base(state: BaseState.offline), reachabilityService: reachabilityService)
@@ -327,7 +438,7 @@ open class RxRestClient {
                 case let .base(state: state):
                     return Observable.just(T(state: state))
                 case let .custom(response: response):
-                    return Observable.just(T(response: response))
+                    return Observable.just(T(response: (response.0, response.1 as? T.Body)))
                 }
             }
     }
@@ -512,20 +623,20 @@ open class RxRestClient {
     ///   - httpResponse: `HTTPURLResponse` object.
     ///   - string: The body of response as a string.
     /// - Returns: A `BaseResponse` enum.
-    private static func checkBaseResponse(_ httpResponse: HTTPURLResponse, _ string: String) -> BaseResponse? {
+    private static func checkBaseResponse(_ httpResponse: HTTPURLResponse, _ body: Any?) -> BaseResponse? {
         switch httpResponse.statusCode {
         case 400:
-            return .badRequest(body: string)
+            return .badRequest(body: body)
         case 401:
-            return .unauthorized(body: string)
+            return .unauthorized(body: body)
         case 403:
-            return .forbidden(body: string)
+            return .forbidden(body: body)
         case 404:
-            return .notFound(body: string)
+            return .notFound(body: body)
         case 422:
-            return .validationProblem(error: string)
+            return .validationProblem(error: body)
         case 500..<600:
-            return .unexpectedError(error: string)
+            return .unexpectedError(error: body)
         default:
             return nil
         }

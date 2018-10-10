@@ -9,5 +9,5 @@ import Foundation
 
 public enum RestResponseStatus {
     case base(state: BaseState)
-    case custom(response: (HTTPURLResponse, String))
+    case custom(response: (HTTPURLResponse, Any?))
 }

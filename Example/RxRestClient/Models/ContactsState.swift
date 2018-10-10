@@ -11,6 +11,8 @@ import RxRestClient
 
 struct ContactsState: ResponseState {
 
+    typealias Body = String
+
     var state: BaseState?
     var contacts: [Contact]
 
@@ -19,10 +21,10 @@ struct ContactsState: ResponseState {
         self.contacts = []
     }
 
-    init(response: (HTTPURLResponse, String)) {
-        if response.0.statusCode == 200 {
+    init(response: (HTTPURLResponse, String?)) {
+        if response.0.statusCode == 200, let body = response.1 {
             self.state = BaseState.online
-            self.contacts = [Contact](JSONString: response.1) ?? []
+            self.contacts = [Contact](JSONString: body) ?? []
         } else {
             self.state = BaseState(serviceState: .online, unexpectedError: "Unable to map response")
             self.contacts = []
