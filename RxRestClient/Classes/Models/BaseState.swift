@@ -48,15 +48,3 @@ public struct BaseState {
     public static let online = BaseState(serviceState: .online)
 
 }
-
-//extension BaseState: Equatable {
-//    public static func == (lhs: BaseState, rhs: BaseState) -> Bool {
-//        return lhs.serviceState == rhs.serviceState
-//            && lhs.badRequest == rhs.badRequest
-//            && lhs.unauthorized == rhs.unauthorized
-//            && lhs.forbidden == rhs.forbidden
-//            && lhs.notFound == rhs.notFound
-//            && lhs.validationProblem == rhs.validationProblem
-//            && lhs.unexpectedError == rhs.unexpectedError
-//    }
-//}
