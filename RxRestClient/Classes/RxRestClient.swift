@@ -23,6 +23,7 @@ public struct RxRestClientOptions {
     public var urlEncoding: ParameterEncoding = URLEncoding.default
     public var jsonEncoding: ParameterEncoding = JSONEncoding.default
     public var jsonDecoder: JSONDecoder = JSONDecoder()
+    public var jsonEncoder: JSONEncoder = JSONEncoder()
 
     public static let `default` = RxRestClientOptions()
 
@@ -132,7 +133,7 @@ open class RxRestClient {
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
         }
-        return post(url: url, object: body.dictionary)
+        return post(url: url, object: body.toDictionary(encoder: options.jsonEncoder))
     }
 
     // MARK: - PUT Requests
@@ -192,7 +193,7 @@ open class RxRestClient {
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
         }
-        return put(url: url, object: body.dictionary)
+        return put(url: url, object: body.toDictionary(encoder: options.jsonEncoder))
     }
 
     // MARK: - PATCH Requests
@@ -229,7 +230,7 @@ open class RxRestClient {
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
         }
-        return patch(url: url, object: body.dictionary)
+        return patch(url: url, object: body.toDictionary(encoder: options.jsonEncoder))
     }
 
     // MARK: - DELETE Requests
@@ -289,7 +290,7 @@ open class RxRestClient {
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
         }
-        return delete(url: url, object: body.dictionary)
+        return delete(url: url, object: body.toDictionary(encoder: options.jsonEncoder))
     }
 
     // MARK: - GET Requests
@@ -326,7 +327,7 @@ open class RxRestClient {
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
         }
-        return get(url: url, query: query.dictionary)
+        return get(url: url, query: query.toDictionary(encoder: options.jsonEncoder))
     }
 
     // MARK: - Request builder

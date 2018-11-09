@@ -8,13 +8,13 @@
 import Foundation
 
 extension Encodable {
-    var dictionary: [String: Any] {
-        guard let data = try? JSONEncoder().encode(self) else { return [:] }
+    public func toDictionary(encoder: JSONEncoder = JSONEncoder()) -> [String: Any] {
+        guard let data = try? encoder.encode(self) else { return [:] }
         return (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)).flatMap { $0 as? [String: Any] } ?? [:]
     }
 
-    var JSONString: String? {
-        guard let data = try? JSONEncoder().encode(self) else {
+    public func toJSONString(encoder: JSONEncoder = JSONEncoder()) -> String? {
+        guard let data = try? encoder.encode(self) else {
             return nil
         }
         return String(data: data, encoding: .utf8)
