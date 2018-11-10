@@ -99,15 +99,15 @@ open class MultipartFormDataBuilder {
             }
             self.data.forEach { arg in
                 let (data, name, fileName, type) = arg
-                formData.append(data, withName: name, fileName: fileName, mimeType: type.rawValue)
+                formData.append(data, withName: name, fileName: fileName, mimeType: type.mimeType)
             }
             self.dataWithName.forEach { arg in
                 let (data, name, type) = arg
-                formData.append(data, withName: name, mimeType: type.rawValue)
+                formData.append(data, withName: name, mimeType: type.mimeType)
             }
             self.files.forEach { arg in
                 let (url, name, type) = arg
-                formData.append(url, withName: name, fileName: url.lastPathComponent, mimeType: type.rawValue)
+                formData.append(url, withName: name, fileName: url.lastPathComponent, mimeType: type.mimeType)
             }
         }
     }
