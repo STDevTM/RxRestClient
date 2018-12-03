@@ -35,6 +35,7 @@ pod 'RxRestClient'
 * Ability to use absalute and relative urls
 * Logger
 * Swift Codable protocol support
+* Use custom SessionManager
 * _more coming soon_
 
 ## How to use
