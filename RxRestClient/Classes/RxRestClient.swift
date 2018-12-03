@@ -637,7 +637,6 @@ open class RxRestClient {
         return baseUrl?.appendingPathComponent(endpoint) ?? URL(string: endpoint)
     }
 
-    
     /// Get session manager
     ///
     /// - Returns: Session Managher instance
