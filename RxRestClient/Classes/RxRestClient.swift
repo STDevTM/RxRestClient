@@ -24,6 +24,7 @@ public struct RxRestClientOptions {
     public var jsonEncoding: ParameterEncoding = JSONEncoding.default
     public var jsonDecoder: JSONDecoder = JSONDecoder()
     public var jsonEncoder: JSONEncoder = JSONEncoder()
+    public var sessionManager: SessionManager?
 
     public static let `default` = RxRestClientOptions()
 
@@ -39,6 +40,7 @@ public struct RxRestClientOptions {
     /// Adding Authorization header
     ///
     /// - Parameter token: token string which will be added as a Authorization header with custom prefix
+    @available(*, deprecated, message: "Use RequestAdapter with custom SessionManager instead.")
     public mutating func addAuth(token: String, prefix: String? = nil) {
         var prefixKey = (prefix ?? "")
         if !prefixKey.isEmpty {
@@ -340,7 +342,7 @@ open class RxRestClient {
     ///   - encoding: The kind of encoding used to process parameters
     /// - Returns: An observable of a the created DataRequest
     public func request(_ method: HTTPMethod, _ url: URLConvertible, object: [String: Any], encoding: ParameterEncoding? = nil) -> Observable<DataRequest> {
-        return RxAlamofire.request(
+        return getSessionManager().rx.request(
             method,
             url,
             parameters: object,
@@ -357,7 +359,7 @@ open class RxRestClient {
     ///   - array: An array containing all necessary options
     /// - Returns: An observable of a the created DataRequest
     public func request(_ method: HTTPMethod, _ url: URLConvertible, array: [Any]) -> Observable<DataRequest> {
-        return RxAlamofire.request(
+        return getSessionManager().rx.request(
             method,
             url,
             parameters: [:],
@@ -440,7 +442,7 @@ open class RxRestClient {
         headers: HTTPHeaders? = nil) -> Observable<T> {
 
         return run(
-            SessionManager.default.rx
+            getSessionManager().rx
                 .upload(multipartFormData: builder.build(), to: url, method: method, headers: headers ?? options.headers)
                 .map { $0.0 }
         )
@@ -482,7 +484,7 @@ open class RxRestClient {
         headers: HTTPHeaders? = nil) -> Observable<T> {
 
         return run(
-            SessionManager.default.rx
+            getSessionManager().rx
                 .upload(file, to: url, method: method, headers: headers ?? options.headers)
                 .map { $0 } // Casting to DataRequest
         )
@@ -522,7 +524,7 @@ open class RxRestClient {
         method: HTTPMethod = .post,
         headers: HTTPHeaders? = nil) -> Observable<(T?, RxProgress)> {
 
-        return SessionManager.default.rx
+        return getSessionManager().rx
             .upload(file, to: url, method: method, headers: headers ?? options.headers)
             .flatMap { [weak self] (request: UploadRequest) -> Observable<(T?, RxProgress)> in
                 guard let strongSelf = self else {
@@ -571,7 +573,7 @@ open class RxRestClient {
         headers: HTTPHeaders? = nil) -> Observable<T> {
 
         return run(
-            SessionManager.default.rx
+            getSessionManager().rx
                 .upload(data, to: url, method: method, headers: headers ?? options.headers)
                 .map { $0 } // Casting to DataRequest
         )
@@ -633,6 +635,14 @@ open class RxRestClient {
     /// - Returns: Built optional URL.
     private func buildURL(_ endpoint: String) -> URL? {
         return baseUrl?.appendingPathComponent(endpoint) ?? URL(string: endpoint)
+    }
+
+    
+    /// Get session manager
+    ///
+    /// - Returns: Session Managher instance
+    private func getSessionManager() -> SessionManager {
+        return options.sessionManager ?? .default
     }
 
 }
