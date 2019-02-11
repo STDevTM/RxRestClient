@@ -36,6 +36,7 @@ pod 'RxRestClient'
 * Logger
 * Swift Codable protocol support
 * Use custom SessionManager
+* Pagination support
 * _more coming soon_
 
 ## How to use
@@ -131,6 +132,84 @@ if let url = URL(string: "https://api.github.com/search/repositories") {
     client.get(url: url, query: ["q": search])
 }
 ```
+
+### Pagination
+
+Pagination support is working only for `GET` requests. In order to have pagination (or infinite scrolling) feature you need to implement following protocols for query and response models:
+
+For query model you need to implement `PagingQueryProtocol`:
+
+```swift
+struct RepositoryQuery: PagingQueryProtocol {
+
+    let q: String
+    var page: Int
+
+    init(q: String) {
+        self.q = q
+        self.page = 1
+    }
+
+    func nextPage() -> RepositoryQuery {
+        var new = self
+        new.page += 1
+        return new
+    }
+}
+```
+
+For response model you need to implement `PagingResponseProtocol`:
+
+```swift
+struct RepositoryResponse {
+    let totalCount: Int
+    var repositories: [Repository]
+
+    private enum CodingKeys: String, CodingKey {
+        case totalCount = "total_count"
+        case repositories = "items"
+    }
+}
+
+extension RepositoryResponse: PagingResponseProtocol {
+
+    typealias Item = Repository
+
+    static var decoder: JSONDecoder {
+        return .init()
+    }
+
+    var canLoadMore: Bool {
+        return totalCount > items.count
+    }
+
+    var items: [Repository] {
+        get {
+            return repositories
+        }
+        set(newValue) {
+            repositories = newValue
+        }
+    }
+
+}
+```
+
+For response states you need to use `PagingState` class or custom subclass:
+
+```swift
+final class RepositoriesState: PagingState<RepositoryResponse> {
+    ...
+}
+```
+
+After having all necessary models you can do your request:
+
+```swift
+client.get("https://api.github.com/search/repositories", query: query, loadNextPageTrigger: loadNextPageTrigger)
+```
+
+`loadNextPageTrigger` is an `Observable` with `Void` type in order to trigger client to do request for next page using new query moderl generated using `nextPage()` function. 
 
 ### Logger
 
