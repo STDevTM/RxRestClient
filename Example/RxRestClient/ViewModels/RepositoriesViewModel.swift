@@ -9,21 +9,50 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import RxRestClient
 
-class RepositoriesViewModel {
+final class RepositoriesViewModel {
 
-    let repositoriesState: Driver<RepositoriesState>
+    // MARK: - Inputs
+    let search = PublishRelay<String>()
+    let loadMore = PublishRelay<Void>()
 
-    init(search: ControlProperty<String>, service: RepositoriesServiceProtocol) {
+    // MARK: - Outputs
+    let repositories = BehaviorRelay<[Repository]>(value: [])
+    let baseState = PublishRelay<BaseState>()
 
-        repositoriesState = search
-            .asDriver()
-            .debounce(0.3)
+    // MARK: - Services
+    private let service: RepositoriesServiceProtocol
+
+    // MARK: - Private vars
+    private let disposeBag = DisposeBag()
+
+    // MARK: -
+    init(service: RepositoriesServiceProtocol) {
+
+        self.service = service
+
+        doBindings()
+    }
+
+    private func doBindings() {
+        let state = search
+            .throttle(0.3, scheduler: MainScheduler.instance)
             .map { RepositoryQuery(q: $0) }
-            .flatMapLatest {
-                service.get(query: $0)
-                    .asDriver(onErrorDriveWith: .never())
+            .flatMapLatest { [service, loadMore] query in
+                service.get(query: query, loadNextPageTrigger: loadMore.asObservable())
             }
+            .share()
+
+        state.map { $0.state }
+            .filterNil()
+            .bind(to: baseState)
+            .disposed(by: disposeBag)
+
+        state.map { $0.response?.repositories ?? []}
+            .bind(to: repositories)
+            .disposed(by: disposeBag)
+
     }
 
 }
