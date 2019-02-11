@@ -18,7 +18,7 @@ struct Repository: Decodable {
 
 }
 
-struct RepositoryResponse {
+struct RepositoryResponse: PagingResponseProtocol {
     let totalCount: Int
     var repositories: [Repository]
 
@@ -26,10 +26,8 @@ struct RepositoryResponse {
         case totalCount = "total_count"
         case repositories = "items"
     }
-}
 
-extension RepositoryResponse: PagingResponseProtocol {
-
+    // MARK: - PagingResponseProtocol
     typealias Item = Repository
 
     static var decoder: JSONDecoder {
