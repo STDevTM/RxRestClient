@@ -13,7 +13,7 @@ public protocol PagingResponseProtocol: Decodable {
 
     static var decoder: JSONDecoder { get }
 
-    var isNextPageExists: Bool { get }
+    var canLoadMore: Bool { get }
 
     var items: [Item] { get set }
 }

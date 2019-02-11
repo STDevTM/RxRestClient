@@ -24,5 +24,4 @@ public struct DefaultState: ResponseState {
         self.success = (200..<300).contains(response.0.statusCode)
     }
 
-    public static let empty = DefaultState(state: BaseState.empty)
 }

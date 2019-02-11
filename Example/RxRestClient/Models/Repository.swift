@@ -36,7 +36,7 @@ extension RepositoryResponse: PagingResponseProtocol {
         return .init()
     }
 
-    var isNextPageExists: Bool {
+    var canLoadMore: Bool {
         return totalCount > items.count
     }
 
