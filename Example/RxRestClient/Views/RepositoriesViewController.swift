@@ -26,55 +26,63 @@ class RepositoriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewModel = RepositoriesViewModel(search: searchBar.rx.text.orEmpty, service: RepositoriesService())
+        viewModel = RepositoriesViewModel(service: RepositoriesService())
 
-        doDriving()
+        doBindings()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    func doBindings() {
+        // Inputs
+        searchBar.rx.text.orEmpty.changed
+            .bind(to: viewModel.search)
+            .disposed(by: disposeBag)
 
-    func doDriving() {
-        viewModel.repositoriesState
-            .map { $0.data ?? [] }
-            .drive(tableView.rx.items(cellIdentifier: "cell")) { _, element, cell in
+        tableView.rx.contentOffset
+            .flatMap { [unowned self] state in
+                return self.tableView.isNearBottomEdge(edgeOffset: 20.0)
+                    ? Signal.just(())
+                    : Signal.empty()
+            }
+            .bind(to: viewModel.loadMore)
+            .disposed(by: disposeBag)
+
+        // Outputs
+        viewModel.repositories
+            .bind(to: tableView.rx.items(cellIdentifier: "cell")) { _, element, cell in
                 cell.textLabel?.text = element.name
                 cell.detailTextLabel?.text = element.description
             }
             .disposed(by: disposeBag)
 
-        viewModel.repositoriesState
-            .map { $0.state?.validationProblem }
+        viewModel.baseState
+            .map { $0.validationProblem }
             .filterNil()
             .map { _ in "Please enter any search query" }
-            .drive(errorText)
+            .bind(to: errorText)
             .disposed(by: disposeBag)
 
-        viewModel.repositoriesState
-            .map { $0.state?.forbidden }
+        viewModel.baseState
+            .map { $0.forbidden }
             .filterNil()
             .map { _ in "You have exceed API limit" }
-            .drive(errorText)
+            .bind(to: errorText)
             .disposed(by: disposeBag)
 
-        viewModel.repositoriesState
-            .map { $0.data }
-            .filterNil()
-            .filter { $0.isEmpty }
-            .map { _ in "Unable to find repo with this search query" }
-            .drive(errorText)
-            .disposed(by: disposeBag)
-
-        viewModel.repositoriesState
-            .map { $0.data?.isNotEmpty ?? false }
+        viewModel.repositories
+            .withLatestFrom(viewModel.baseState) { $0.isEmpty && $1.isSuccess }
             .filter { $0 }
+            .map { _ in "Unable to find repo with this search query" }
+            .bind(to: errorText)
+            .disposed(by: disposeBag)
+
+        viewModel.repositories
+            .filter { $0.isNotEmpty }
             .map { _ in nil }
-            .drive(errorText)
+            .bind(to: errorText)
             .disposed(by: disposeBag)
 
         errorText
+            .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [tableView] msg in
                 guard let msg = msg else {
                     tableView?.backgroundView = nil

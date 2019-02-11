@@ -329,7 +329,98 @@ open class RxRestClient {
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
         }
+        return get(url: url, query: query)
+    }
+
+    /// Do GET Request
+    ///
+    /// - Parameters:
+    ///   - url: absalute url
+    ///   - query: Encodable model representing query of request
+    /// - Returns: An observable of a the response state
+    public func get<T: ResponseState>(url: URL, query: Encodable) -> Observable<T> {
         return get(url: url, query: query.toDictionary(encoder: options.jsonEncoder))
+    }
+
+
+    /// Do Get Request
+    ///
+    /// - Parameters:
+    ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
+    ///   - query: PagingQueryProtocol model representing query of request with pagination
+    /// - Returns: An observable of a the response state with pagination
+    public func get<T: PagingState<R>, R: PagingResponseProtocol>(
+        _ endpoint: String,
+        query: PagingQueryProtocol,
+        loadNextPageTrigger: Observable<Void>) -> Observable<T> {
+
+        guard let url = buildURL(endpoint) else {
+            return Observable.error(RxRestClientError.urlBuildFailed)
+        }
+        return get(url: url, query: query, loadNextPageTrigger: loadNextPageTrigger)
+    }
+
+    /// Do Get Request
+    ///
+    /// - Parameters:
+    ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
+    ///   - query: PagingQueryProtocol model representing query of request with pagination
+    /// - Returns: An observable of a the response state with pagination
+    public func get<T: PagingState<R>, R: PagingResponseProtocol>(
+        url: URL,
+        query: PagingQueryProtocol,
+        loadNextPageTrigger: Observable<Void>) -> Observable<T> {
+
+        return recursivelyGet(url: url, query: query, loadedSoFar: [], loadNextPageTrigger: loadNextPageTrigger)
+    }
+
+
+    /// Do Get Request recursively by appending the result of each request to previous one
+    ///
+    /// - Parameters:
+    ///   - url: absalute url
+    ///   - query: PagingQueryProtocol model representing query of request with pagination
+    ///   - loadedSoFar: An array of items previously loaded
+    ///   - loadNextPageTrigger: An observable to trigger next page load event
+    /// - Returns: An observable of a the response state with pagination
+    private func recursivelyGet<T: PagingState<R>, R: PagingResponseProtocol>(
+        url: URL,
+        query: PagingQueryProtocol,
+        loadedSoFar: [R.Item],
+        loadNextPageTrigger: Observable<Void>) -> Observable<T> {
+
+        return get(url: url, query: query)
+            .flatMapLatest { (state: T) -> Observable<T> in
+
+                guard var response = state.response else {
+                    return Observable.just(state)
+                }
+
+                if response.items.isEmpty {
+                    state.response?.items = loadedSoFar
+                    return Observable.just(state)
+                }
+
+                var loadedValues = loadedSoFar
+                loadedValues.append(contentsOf: response.items)
+                response.items = loadedValues
+                state.response = response
+
+                if !response.canLoadMore {
+                    return Observable.just(state)
+                }
+
+                let newQuery = query.nextPage()
+
+                return Observable<T>.concat([
+                    // return loaded immediately
+                    Observable.just(state),
+                    // wait until next page can be loaded
+                    Observable.never().takeUntil(loadNextPageTrigger),
+                    // load next page
+                    self.recursivelyGet(url: url, query: newQuery, loadedSoFar: loadedValues, loadNextPageTrigger: loadNextPageTrigger) as Observable<T>
+                ])
+        }
     }
 
     // MARK: - Request builder

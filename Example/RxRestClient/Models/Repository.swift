@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxRestClient
 
 struct Repository: Decodable {
 
@@ -17,12 +18,33 @@ struct Repository: Decodable {
 
 }
 
-struct RepositoryResponse: Decodable {
+struct RepositoryResponse: PagingResponseProtocol {
     let totalCount: Int
-    let items: [Repository]
+    var repositories: [Repository]
 
     private enum CodingKeys: String, CodingKey {
         case totalCount = "total_count"
-        case items
+        case repositories = "items"
     }
+
+    // MARK: - PagingResponseProtocol
+    typealias Item = Repository
+
+    static var decoder: JSONDecoder {
+        return .init()
+    }
+
+    var canLoadMore: Bool {
+        return totalCount > items.count
+    }
+
+    var items: [Repository] {
+        get {
+            return repositories
+        }
+        set(newValue) {
+            repositories = newValue
+        }
+    }
+
 }

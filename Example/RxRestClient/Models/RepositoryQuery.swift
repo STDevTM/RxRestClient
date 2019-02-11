@@ -7,7 +7,22 @@
 //
 
 import Foundation
+import RxSwift
+import RxRestClient
 
-struct RepositoryQuery: Encodable {
+struct RepositoryQuery: PagingQueryProtocol {
+
     let q: String
+    var page: Int
+
+    init(q: String) {
+        self.q = q
+        self.page = 1
+    }
+
+    func nextPage() -> RepositoryQuery {
+        var new = self
+        new.page += 1
+        return new
+    }
 }
