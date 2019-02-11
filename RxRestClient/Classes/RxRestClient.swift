@@ -406,7 +406,7 @@ open class RxRestClient {
                 response.items = loadedValues
                 state.response = response
 
-                if !response.isNextPageExists {
+                if !response.canLoadMore {
                     return Observable.just(state)
                 }
 

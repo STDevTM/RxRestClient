@@ -11,8 +11,8 @@ open class PagingState<R: PagingResponseProtocol>: ResponseState {
 
     public typealias Body = Data
 
-    public var response: R?
     public var state: BaseState?
+    public var response: R?
 
     required public init(state: BaseState) {
         self.state = state

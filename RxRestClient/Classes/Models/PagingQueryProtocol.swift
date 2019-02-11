@@ -9,8 +9,5 @@ import Foundation
 import RxSwift
 
 public protocol PagingQueryProtocol: Encodable {
-
-    var page: Int { get set }
-
     func nextPage() -> Self
 }
