@@ -47,4 +47,15 @@ public struct BaseState {
 
     public static let online = BaseState(serviceState: .online)
 
+    public var isSuccess: Bool {
+        return self.serviceState == .online
+            && self.badRequest == nil
+            && self.unauthorized == nil
+            && self.forbidden == nil
+            && self.notFound == nil
+            && self.validationProblem == nil
+            && self.unexpectedError == nil
+
+    }
+
 }

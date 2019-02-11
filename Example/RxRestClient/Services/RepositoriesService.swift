@@ -11,14 +11,20 @@ import RxSwift
 import RxRestClient
 
 protocol RepositoriesServiceProtocol {
-    func get(query: RepositoryQuery) -> Observable<RepositoriesState>
+    func get(query: RepositoryQuery, loadNextPageTrigger: Observable<Void>) -> Observable<RepositoriesState>
 }
 
 final class RepositoriesService: RepositoriesServiceProtocol {
 
-    private let client = RxRestClient()
+    private let client: RxRestClient
 
-    func get(query: RepositoryQuery) -> Observable<RepositoriesState> {
-        return client.get("https://api.github.com/search/repositories", query: query)
+    init() {
+        var options = RxRestClientOptions.default
+        options.logger = DebugRxRestClientLogger()
+        self.client = RxRestClient(options: options)
+    }
+
+    func get(query: RepositoryQuery, loadNextPageTrigger: Observable<Void>) -> Observable<RepositoriesState> {
+        return client.get("https://api.github.com/search/repositories", query: query, loadNextPageTrigger: loadNextPageTrigger)
     }
 }
