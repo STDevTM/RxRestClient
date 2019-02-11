@@ -80,7 +80,7 @@ struct RepositoryQuery: Encodable {
 
 ```
 
-Than you can do the request to get repositories:
+Then you can do the request to get repositories:
 
 ```swift
 import RxSwift
@@ -123,7 +123,7 @@ When calling any request you can provide either `String` endpoint or absalute `U
 client.get("rest/contacts")
 ```
 
-If `baseURL` is `nil` than it will try to convert provided `String` to `URL`.
+If `baseURL` is `nil` then it will try to convert provided `String` to `URL`.
 
 In order to use absalute url even when your client has `baseURL` you can provide `URL` like this:
 
