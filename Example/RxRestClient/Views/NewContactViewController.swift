@@ -66,7 +66,7 @@ class NewContactViewController: UIViewController {
             .disposed(by: disposeBag)
     }
 
-    private func twoWayBind<Base>(_ variable: Variable<Base>, _ property: ControlProperty<Base>) -> Disposable {
+    private func twoWayBind<Base>(_ variable: BehaviorRelay<Base>, _ property: ControlProperty<Base>) -> Disposable {
         let d1 = property
             .skip(1)
             .bind(to: variable)
@@ -153,7 +153,7 @@ extension NewContactViewController: UIImagePickerControllerDelegate, UINavigatio
     #if swift(>=4.2)
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            viewModel.image.value = pickedImage
+            viewModel.image.accept(pickedImage)
         }
 
         dismiss(animated: true, completion: nil)
