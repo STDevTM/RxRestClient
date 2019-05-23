@@ -16,7 +16,7 @@ import Foundation
 /// - notFound: When recieve **404** status code from server.
 /// - validationProblem: When recieve **422** status code from server.
 /// - unexpectedError: When recieve `Internal Sever Error`.
-public enum BaseResponse {
+public enum BaseResponse: Error {
     case serviceOffline
 
     case badRequest(body: Any?)

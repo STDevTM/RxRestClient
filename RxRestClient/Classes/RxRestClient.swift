@@ -466,6 +466,9 @@ open class RxRestClient {
     /// - Returns: An observable of a the response state
     public func run<T: ResponseState>(_ request: Observable<DataRequest>) -> Observable<T> {
         return request
+            .validate { [unowned self] request, response, data in
+                return self.validate(request, response, data)
+            }
             .flatMap { [options] request -> Observable<(HTTPURLResponse, T.Body?)> in
                 options.logger?.log(request)
 
@@ -476,16 +479,17 @@ open class RxRestClient {
                     return request.rx.responseData().map { ($0.0, $0.1 as? T.Body) }
                 }
             }
-            .retry(options.retryCount)
             .observeOn(backgroundWorkScheduler)
             .map { (httpResponse, body) -> RestResponseStatus in
-
-                if let response = RxRestClient.checkBaseResponse(httpResponse, body) {
-                    return .base(state: RxRestClient.checkBaseState(response: response))
-                } else {
-                    return .custom(response: (httpResponse, body))
-                }
+                return .custom(response: (httpResponse, body))
             }
+            .catchError { e in
+                if let response = e as? BaseResponse {
+                    return Observable.just(.base(state: RxRestClient.checkBaseState(response: response)))
+                }
+                return Observable.error(e)
+            }
+            .retry(options.retryCount)
             .retryOnBecomesReachable(.base(state: BaseState.offline), reachabilityService: reachabilityService)
             .flatMap { response -> Observable<T> in
                 switch response {
@@ -668,6 +672,21 @@ open class RxRestClient {
                 .upload(data, to: url, method: method, headers: headers ?? options.headers)
                 .map { $0 } // Casting to DataRequest
         )
+    }
+
+    /// Do validation of response
+    ///
+    /// - Parameters:
+    ///   - request: URL Request
+    ///   - response: URL Response
+    ///   - data: Response body
+    /// - Returns: ValidationResult
+    open func validate(_ request: URLRequest?, _ response: HTTPURLResponse, _ data: Data?) -> Request.ValidationResult {
+
+        if let baseResponse = RxRestClient.checkBaseResponse(response, data) {
+            return .failure(baseResponse)
+        }
+        return .success
     }
 
     // MARK: - Checking base response cases
