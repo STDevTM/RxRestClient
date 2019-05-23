@@ -1,7 +1,8 @@
 Pod::Spec.new do |s|
   s.name             = 'RxRestClient'
-  s.version          = '1.1.0'
+  s.version          = '1.2.0'
   s.summary          = 'Simple REST Client based on RxSwift and Alamofire.'
+  s.swift_version = '5.0'
 
   s.description      = <<-DESC
   Reactive way to interct with REST API. Send request and get responses easily. Handling basic response cases by default, for example: Not Found, Unauthorized, etc.
@@ -21,9 +22,9 @@ Pod::Spec.new do |s|
   #   'RxRestClient' => ['RxRestClient/Assets/*.png']
   # }
 
-  s.dependency 'RxSwift', '~> 4'
-  s.dependency 'RxCocoa', '~> 4'
+  s.dependency 'RxSwift', '~> 5'
+  s.dependency 'RxCocoa', '~> 5'
   s.dependency 'Alamofire', '~> 4'
-  s.dependency 'RxAlamofire', '~> 4'
+  s.dependency 'RxAlamofire', '~> 5'
 
 end

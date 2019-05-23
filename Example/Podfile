@@ -4,7 +4,7 @@ use_frameworks!
 
 target 'RxRestClient_Example' do
   pod 'RxRestClient', :path => '../'
-  pod 'RxOptional', '~> 3.5.0'
+  pod 'RxOptional', '~> 4.0.0'
   pod 'ObjectMapper', '~> 3.3.0'
   pod 'AlamofireNetworkActivityIndicator', '~> 2.3.0'
   pod 'SDWebImage', '~> 4.4.2'

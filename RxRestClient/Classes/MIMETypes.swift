@@ -133,20 +133,20 @@ public enum MIMETypes: String {
 
 public extension URL {
 
-    public func mimeType() -> MIMETypes {
+    func mimeType() -> MIMETypes {
         return MIMETypes(rawValue: pathExtension) ?? .default
     }
 
 }
 
 public extension NSString {
-    public func mimeType() -> MIMETypes {
+    func mimeType() -> MIMETypes {
         return MIMETypes(rawValue: pathExtension) ?? .default
     }
 }
 
 public extension String {
-    public func mimeType() -> MIMETypes {
+    func mimeType() -> MIMETypes {
         return (self as NSString).mimeType()
     }
 }

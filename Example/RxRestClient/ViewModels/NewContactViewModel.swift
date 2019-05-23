@@ -16,10 +16,10 @@ class NewContactViewModel {
 
     private let disposeBag = DisposeBag()
 
-    let firstName = Variable<String?>(nil)
-    let lastName = Variable<String?>(nil)
-    let email = Variable<String?>(nil)
-    let image = Variable<UIImage?>(nil)
+    let firstName = BehaviorRelay<String?>(value: nil)
+    let lastName = BehaviorRelay<String?>(value: nil)
+    let email = BehaviorRelay<String?>(value: nil)
+    let image = BehaviorRelay<UIImage?>(value: nil)
     let saveCommand = PublishSubject<Void>()
 
     var createState: Driver<DefaultState> = .never()
@@ -46,12 +46,12 @@ class NewContactViewModel {
 
     private func initData() {
         guard let contact = oldContact else { return }
-        firstName.value = contact.firstName
-        lastName.value = contact.lastName
-        email.value = contact.email
+        firstName.accept(contact.firstName)
+        lastName.accept(contact.lastName)
+        email.accept(contact.email)
 
         SDWebImageDownloader.shared().downloadImage(with: contact.imageURL, progress: nil) { [weak self] image, _, _, _ in
-            self?.image.value = image
+            self?.image.accept(image)
             self?.imageUploaded.onNext(contact.images.first)
         }
     }
