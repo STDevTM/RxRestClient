@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RxRestClient'
-  s.version          = '1.2.0'
+  s.version          = '1.2.1'
   s.summary          = 'Simple REST Client based on RxSwift and Alamofire.'
   s.swift_version = '5.0'
 
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Tigran Hambardzumyan' => 'tigran@stdevmail.com' }
   s.source           = { :git => 'https://github.com/stdevteam/RxRestClient.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '9.3'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'RxRestClient/Classes/**/*'
   
