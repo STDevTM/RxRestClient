@@ -20,8 +20,8 @@ public struct RxRestClientOptions {
     public var headers = ["Content-Type": "application/json"]
     public var maxConcurrentOperationCount = 2
     public var logger: RxRestClientLogger?
-    public var urlEncoding: ParameterEncoding = URLEncoding.default
-    public var jsonEncoding: ParameterEncoding = JSONEncoding.default
+    public var queryEncoding: ParameterEncoding = URLEncoding.default
+    public var bodyEncoding: ParameterEncoding = JSONEncoding.default
     public var jsonDecoder: JSONDecoder = JSONDecoder()
     public var jsonEncoder: JSONEncoder = JSONEncoder()
     public var sessionManager: SessionManager?
@@ -99,7 +99,7 @@ open class RxRestClient {
     ///   - object: dictinary representing body of request
     /// - Returns: An observable of a the response state
     public func post<T: ResponseState>(url: URL, object: [String: Any]) -> Observable<T> {
-        return run(request(.post, url, object: object))
+        return run(request(.post, url, object: object, encoding: options.bodyEncoding))
     }
 
     /// Do POST Request
@@ -159,7 +159,7 @@ open class RxRestClient {
     ///   - object: dictinary representing body of request
     /// - Returns: An observable of a the response state
     public func put<T: ResponseState>(url: URL, object: [String: Any]) -> Observable<T> {
-        return run(request(.put, url, object: object))
+        return run(request(.put, url, object: object, encoding: options.bodyEncoding))
     }
     
     /// Do PUT Request
@@ -219,7 +219,7 @@ open class RxRestClient {
     ///   - object: dictinary representing body of request
     /// - Returns: An observable of a the response state
     public func patch<T: ResponseState>(url: URL, object: [String: Any]) -> Observable<T> {
-        return run(request(.patch, url, object: object))
+        return run(request(.patch, url, object: object, encoding: options.bodyEncoding))
     }
 
     /// Do PATCH Request
@@ -256,30 +256,7 @@ open class RxRestClient {
     ///   - object: dictinary representing body of request, default value is empty
     /// - Returns: An observable of a the response state
     public func delete<T: ResponseState>(url: URL, object: [String: Any] = [:]) -> Observable<T> {
-        return run(request(.delete, url, object: object))
-    }
-
-    /// Do DELETE Request
-    ///
-    /// - Parameters:
-    ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
-    ///   - array: array representing body of request, default value is empty
-    /// - Returns: An observable of a the response state
-    public func delete<T: ResponseState>(_ endpoint: String, array: [Any]) -> Observable<T> {
-        guard let url = buildURL(endpoint) else {
-            return Observable.error(RxRestClientError.urlBuildFailed)
-        }
-        return delete(url: url, array: array)
-    }
-
-    /// Do DELETE Request
-    ///
-    /// - Parameters:
-    ///   - url: absalute url
-    ///   - array: array representing body of request, default value is empty
-    /// - Returns: An observable of a the response state
-    public func delete<T: ResponseState>(url: URL, array: [Any]) -> Observable<T> {
-        return run(request(.delete, url, array: array))
+        return run(request(.delete, url, object: object, encoding: options.queryEncoding))
     }
 
     /// Do DELETE Request
@@ -316,7 +293,7 @@ open class RxRestClient {
     ///   - query: dictinary representing query of request, default value is empty
     /// - Returns: An observable of a the response state
     public func get<T: ResponseState>(url: URL, query: [String: Any] = [:]) -> Observable<T> {
-        return run(request(.get, url, object: query, encoding: options.urlEncoding))
+        return run(request(.get, url, object: query, encoding: options.queryEncoding))
     }
 
     /// Do GET Request
@@ -432,12 +409,12 @@ open class RxRestClient {
     ///   - object: A dictionary containing all necessary options
     ///   - encoding: The kind of encoding used to process parameters
     /// - Returns: An observable of a the created DataRequest
-    public func request(_ method: HTTPMethod, _ url: URLConvertible, object: [String: Any], encoding: ParameterEncoding? = nil) -> Observable<DataRequest> {
+    public func request(_ method: HTTPMethod, _ url: URLConvertible, object: [String: Any], encoding: ParameterEncoding) -> Observable<DataRequest> {
         return getSessionManager().rx.request(
             method,
             url,
             parameters: object,
-            encoding: encoding ?? options.jsonEncoding,
+            encoding: encoding,
             headers: options.headers
         )
     }
