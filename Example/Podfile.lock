@@ -18,7 +18,7 @@ PODS:
     - RxSwift (~> 5)
   - RxRelay (5.0.0):
     - RxSwift (~> 5)
-  - RxRestClient (1.2.1):
+  - RxRestClient (1.3.0):
     - Alamofire (~> 4)
     - RxAlamofire (~> 5)
     - RxCocoa (~> 5)
@@ -65,7 +65,7 @@ SPEC CHECKSUMS:
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxOptional: 9904e2219d59260c3c171273d475b2126de187e8
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
-  RxRestClient: 4bf25b1d2355c6f6815d0d71f2f6e32e3d34f0d9
+  RxRestClient: 63e5a2cf7ceeeed169eb40925fb9a6c31a806fe0
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
 
