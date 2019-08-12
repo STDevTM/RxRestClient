@@ -15,7 +15,7 @@ public enum ReachabilityStatus {
     case unreachable
 }
 
-extension ReachabilityStatus {
+public extension ReachabilityStatus {
     var reachable: Bool {
         switch self {
         case .reachable:
@@ -44,7 +44,7 @@ public class DefaultReachabilityService: ReachabilityService {
 
     let _reachability: Reachability
 
-    init() throws {
+    public init() throws {
         guard let reachabilityRef = Reachability() else { throw ReachabilityServiceError.failedToCreate }
         let reachabilitySubject = BehaviorSubject<ReachabilityStatus>(value: .unreachable)
 
