@@ -26,11 +26,11 @@ extension ReachabilityStatus {
     }
 }
 
-protocol ReachabilityService {
+public protocol ReachabilityService {
     var reachability: Observable<ReachabilityStatus> { get }
 }
 
-enum ReachabilityServiceError: Error {
+public enum ReachabilityServiceError: Error {
     case failedToCreate
 }
 
