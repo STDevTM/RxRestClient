@@ -1,6 +1,6 @@
 //
 //  Encodable+Extensions.swift
-//  Alamofire
+//  RxRestClient
 //
 //  Created by Tigran Hambardzumyan on 10/9/18.
 //

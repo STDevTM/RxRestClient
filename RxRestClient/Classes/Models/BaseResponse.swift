@@ -10,12 +10,12 @@ import Foundation
 /// Enum for representing basic response cases.
 ///
 /// - serviceOffline: When network service is offline.
-/// - badRequest: When recieve **400** status code from server.
-/// - unauthorized: When recieve **401** status code from server.
-/// - forbidden: When recieve **403** status code from server.
-/// - notFound: When recieve **404** status code from server.
-/// - validationProblem: When recieve **422** status code from server.
-/// - unexpectedError: When recieve `Internal Sever Error`.
+/// - badRequest: When receive **400** status code from server.
+/// - unauthorized: When receive **401** status code from server.
+/// - forbidden: When receive **403** status code from server.
+/// - notFound: When receive **404** status code from server.
+/// - validationProblem: When receive **422** status code from server.
+/// - unexpectedError: When receive `Internal Sever Error`.
 public enum BaseResponse: Error {
     case serviceOffline
 

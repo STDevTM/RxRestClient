@@ -15,6 +15,8 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		738C7D32C229F96FB1410B48 /* Pods_RxRestClient_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8286D04B278F325D5FEBCD8 /* Pods_RxRestClient_Tests.framework */; };
+		98CD7660244B5CFF00865A5C /* APILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CD765F244B5CFF00865A5C /* APILogger.swift */; };
+		98CD7665244B66A100865A5C /* RxRestClient 2.0 Migration Guide.md in Resources */ = {isa = PBXBuildFile; fileRef = 98CD7664244B66A100865A5C /* RxRestClient 2.0 Migration Guide.md */; };
 		9A28A2DE205BF6900051E02B /* RepositoriesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28A2DD205BF6900051E02B /* RepositoriesState.swift */; };
 		9A28A2E0205BF6F60051E02B /* RepositoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28A2DF205BF6F60051E02B /* RepositoriesService.swift */; };
 		9A28A2E2205BF8210051E02B /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28A2E1205BF8210051E02B /* Repository.swift */; };
@@ -59,6 +61,8 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6A57BB764AFFA38C35D1BEAB /* Pods-RxRestClient_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxRestClient_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxRestClient_Tests/Pods-RxRestClient_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D54F3BC098218181BCF97B3 /* Pods-RxRestClient_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxRestClient_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxRestClient_Tests/Pods-RxRestClient_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		98CD765F244B5CFF00865A5C /* APILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILogger.swift; sourceTree = "<group>"; };
+		98CD7664244B66A100865A5C /* RxRestClient 2.0 Migration Guide.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "RxRestClient 2.0 Migration Guide.md"; sourceTree = "<group>"; };
 		9A28A2DD205BF6900051E02B /* RepositoriesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesState.swift; sourceTree = "<group>"; };
 		9A28A2DF205BF6F60051E02B /* RepositoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesService.swift; sourceTree = "<group>"; };
 		9A28A2E1205BF8210051E02B /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -190,11 +194,21 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				98CD7661244B62C000865A5C /* Documentation */,
 				C5407349FC1D9AC921C11477 /* RxRestClient.podspec */,
 				177634B2AE2349B731679201 /* README.md */,
 				F2D69DA486E24050EF561D90 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		98CD7661244B62C000865A5C /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				98CD7664244B66A100865A5C /* RxRestClient 2.0 Migration Guide.md */,
+			);
+			name = Documentation;
+			path = ../Documentation;
 			sourceTree = "<group>";
 		};
 		9A28A2D9205BF6330051E02B /* ViewModels */ = {
@@ -236,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				9A28A2DF205BF6F60051E02B /* RepositoriesService.swift */,
+				98CD765F244B5CFF00865A5C /* APILogger.swift */,
 				9A39C509206A33DE0036BA02 /* ContactsService.swift */,
 			);
 			path = Services;
@@ -340,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				98CD7665244B66A100865A5C /* RxRestClient 2.0 Migration Guide.md in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -454,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98CD7660244B5CFF00865A5C /* APILogger.swift in Sources */,
 				9A39C50A206A33DE0036BA02 /* ContactsService.swift in Sources */,
 				9A39C50F206A37900036BA02 /* ContactsViewModel.swift in Sources */,
 				9A39C515206A50790036BA02 /* NewContactViewModel.swift in Sources */,

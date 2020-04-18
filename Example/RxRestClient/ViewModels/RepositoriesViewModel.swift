@@ -37,7 +37,7 @@ final class RepositoriesViewModel {
 
     private func doBindings() {
         let state = search
-            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .debounce(.milliseconds(300), scheduler: MainScheduler.instance)
             .map { RepositoryQuery(q: $0) }
             .flatMapLatest { [service, loadMore] query in
                 service.get(query: query, loadNextPageTrigger: loadMore.asObservable())

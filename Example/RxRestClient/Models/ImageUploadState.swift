@@ -27,7 +27,12 @@ struct ImageUploadState: ResponseState {
         switch response.0.statusCode {
         case 200..<300:
             if let body = response.1 {
-                self.response = ImageUploadResponse(JSONString: body)
+                do {
+                    self.response = try ImageUploadResponse(JSONString: body)
+                } catch {
+                    self.response = nil
+                    self.state = BaseState(unexpectedError: error)
+                }
             }
         case 413:
             self.tooLarge = true

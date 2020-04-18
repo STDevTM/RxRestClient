@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxRestClient
+import Alamofire
 
 protocol RepositoriesServiceProtocol {
     func get(query: RepositoryQuery, loadNextPageTrigger: Observable<Void>) -> Observable<RepositoriesState>
@@ -20,7 +21,7 @@ final class RepositoriesService: RepositoriesServiceProtocol {
 
     init() {
         var options = RxRestClientOptions.default
-        options.logger = DebugRxRestClientLogger()
+        options.sessionManager = Session(eventMonitors: [APILogger()])
         self.client = RxRestClient(options: options)
     }
 

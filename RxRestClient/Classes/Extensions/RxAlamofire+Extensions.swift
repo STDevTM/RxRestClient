@@ -1,50 +1,26 @@
 //
 //  RxAlamofire+Extensions.swift
-//  AmvigoElite
+//  RxRestClient
 //
 //  Created by Yervand Saribekyan on 8/15/17.
-//  Copyright © 2017 STDev's Mac Mini 2. All rights reserved.
+//  Copyright © 2017 STDev's Mac Mini. All rights reserved.
 //
 
-import Foundation
 import Alamofire
-import RxSwift
+import Foundation
 import RxAlamofire
+import RxSwift
 
-extension Reactive where Base: DownloadRequest {
-    /*
-     Returns an `Observable` for the downloaded path.
-
-     Parameters on observed tuple: String
-
-     - returns: An instance of `Observable<String?>`
-     */
-    public func response() -> Observable<String?> {
-        return Observable.create { observer in
-
-            self.base.response { response in
-                observer.onNext(response.destinationURL?.path)
-                observer.onCompleted()
-
-            }
-
-            return Disposables.create()
-        }
-    }
-}
-
-extension Reactive where Base: SessionManager {
-
+extension Reactive where Base: Session {
     public func upload(
         _ file: URL,
         to url: URLConvertible,
         method: HTTPMethod,
         headers: HTTPHeaders? = nil)
         -> Observable<UploadRequest> {
-
-            return self.request { manager in
-                return manager.upload(file, to: url, method: method, headers: headers)
-            }
+        return request { manager in
+            manager.upload(file, to: url, method: method, headers: headers)
+        }
     }
 
     public func upload(
@@ -63,9 +39,9 @@ extension Reactive where Base: SessionManager {
         method: HTTPMethod,
         headers: HTTPHeaders? = nil)
         -> Observable<UploadRequest> {
-            return request { manager in
-                return manager.upload(data, to: url, method: method, headers: headers)
-            }
+        return request { manager in
+            manager.upload(data, to: url, method: method, headers: headers)
+        }
     }
 
     public func upload(
@@ -73,62 +49,70 @@ extension Reactive where Base: SessionManager {
         to url: URLConvertible,
         method: HTTPMethod = .post,
         headers: HTTPHeaders? = nil)
-        -> Observable<(UploadRequest, Bool, URL?)> {
-
-            return Observable.create { observer -> Disposable in
-                self.base.upload(multipartFormData: multipartFormData, to: url, method: method, headers: headers) { result in
-                    switch result {
-                    case let .success(request, streamingFromDisk, streamFileURL):
-                        observer.on(.next((request, streamingFromDisk, streamFileURL)))
-                        observer.on(.completed)
-                    case let .failure(error):
-                        observer.onError(error)
-                    }
-                }
-                return Disposables.create()
-            }
+        -> Observable<UploadRequest> {
+        return request { manager in
+            manager.upload(multipartFormData: multipartFormData, to: url, method: method, headers: headers)
+        }
     }
 
     /**
      Creates an observable of the DataRequest.
-
      - parameter createRequest: A function used to create a `Request` using a `Manager`
-
      - returns: A generic observable of created data request
      */
-    func request<R: UploadRequest>(_ createRequest: @escaping (SessionManager) throws -> R) -> Observable<R> {
+    func request<R: UploadRequest>(_ createRequest: @escaping (Session) throws -> R) -> Observable<R> {
         return Observable.create { observer -> Disposable in
             let request: R
             do {
                 request = try createRequest(self.base)
                 observer.on(.next(request))
-                request.responseWith(completionHandler: { (response) in
+                request.responseWith(completionHandler: { response in
                     if let error = response.error {
-                        observer.onError(error)
+                        observer.on(.error(error))
                     } else {
                         observer.on(.completed)
                     }
                 })
 
                 if !self.base.startRequestsImmediately {
-                    request.resume()
+                    _ = request.resume()
                 }
 
                 return Disposables.create {
-                    request.cancel()
+                    _ = request.cancel()
                 }
-            } catch let error {
+            } catch {
                 observer.on(.error(error))
                 return Disposables.create()
             }
         }
     }
-
 }
 
-extension UploadRequest {
-    func responseWith(completionHandler: @escaping (DefaultDataResponse) -> Void) {
-        response { (response) in
+protocol RxAlamofireRequest {
+    func responseWith(completionHandler: @escaping (RxAlamofireResponse) -> Void)
+    func resume() -> Self
+    func cancel() -> Self
+}
+
+protocol RxAlamofireResponse {
+    var error: Error? { get }
+}
+
+extension DataResponse: RxAlamofireResponse {
+    var error: Error? {
+        switch result {
+        case let .failure(error):
+            return error
+        default:
+            return nil
+        }
+    }
+}
+
+extension UploadRequest: RxAlamofireRequest {
+    func responseWith(completionHandler: @escaping (RxAlamofireResponse) -> Void) {
+        response { response in
             completionHandler(response)
         }
     }
