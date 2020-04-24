@@ -1,9 +1,9 @@
 # RxRestClient
 
-[![CI Status](http://img.shields.io/travis/stdevteam/RxRestClient.svg?style=flat)](https://travis-ci.org/stdevteam/RxRestClient)
-[![Version](https://img.shields.io/cocoapods/v/RxRestClient.svg?style=flat)](http://cocoapods.org/pods/RxRestClient)
-[![License](https://img.shields.io/cocoapods/l/RxRestClient.svg?style=flat)](http://cocoapods.org/pods/RxRestClient)
-[![Platform](https://img.shields.io/cocoapods/p/RxRestClient.svg?style=flat)](http://cocoapods.org/pods/RxRestClient)
+[![CI Status](https://img.shields.io/travis/STDevTM/RxRestClient.svg?style=flat)](https://travis-ci.org/STDevTM/RxRestClient)
+[![Version](https://img.shields.io/cocoapods/v/RxRestClient.svg?style=flat)](https://cocoapods.org/pods/RxRestClient)
+[![License](https://img.shields.io/cocoapods/l/RxRestClient.svg?style=flat)](https://cocoapods.org/pods/RxRestClient)
+[![Platform](https://img.shields.io/cocoapods/p/RxRestClient.svg?style=flat)](https://cocoapods.org/pods/RxRestClient)
 
 ## Example
 
