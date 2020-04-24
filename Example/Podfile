@@ -4,15 +4,15 @@ use_frameworks!
 
 target 'RxRestClient_Example' do
   pod 'RxRestClient', :path => '../'
-  pod 'RxOptional', '~> 4.0.0'
-  pod 'ObjectMapper', '~> 3.3.0'
-  pod 'AlamofireNetworkActivityIndicator', '~> 2.3.0'
+  pod 'RxOptional', '~> 4.1.0'
+  pod 'ObjectMapper', '~> 3.5.2'
+  pod 'AlamofireNetworkActivityIndicator', '~> 3.1.0'
   pod 'SDWebImage', '~> 4.4.2'
 
   target 'RxRestClient_Tests' do
     inherit! :search_paths
 
-    pod 'Quick', '~> 1.3.2'
-    pod 'Nimble', '~> 7.3.1'
+    pod 'Quick', '~> 2.2.0'
+    pod 'Nimble', '~> 8.0.7'
   end
 end

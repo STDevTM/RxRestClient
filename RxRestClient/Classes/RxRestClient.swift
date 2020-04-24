@@ -1,14 +1,14 @@
 //
 //  RxRestClient.swift
-//  Alamofire
+//  RxRestClient
 //
 //  Created by Tigran Hambardzumyan on 3/2/18.
 //
 
-import Foundation
-import RxSwift
 import Alamofire
+import Foundation
 import RxAlamofire
+import RxSwift
 
 public enum RxRestClientError: Error {
     case urlBuildFailed
@@ -17,43 +17,38 @@ public enum RxRestClientError: Error {
 
 public struct RxRestClientOptions {
     public var retryCount = 3
-    public var headers = ["Content-Type": "application/json"]
+    public var headers = HTTPHeaders([HTTPHeader(name: "Content-Type", value: "application/json")])
     public var maxConcurrentOperationCount = 2
-    public var logger: RxRestClientLogger?
     public var queryEncoding: ParameterEncoding = URLEncoding.default
     public var bodyEncoding: ParameterEncoding = JSONEncoding.default
     public var jsonDecoder: JSONDecoder = JSONDecoder()
     public var jsonEncoder: JSONEncoder = JSONEncoder()
-    public var sessionManager: SessionManager?
+    public var sessionManager = Session.default
 
     public static let `default` = RxRestClientOptions()
 
-    /// Adding or replacing header via key
+    /// Append or update header via key/value pair
     ///
     /// - Parameters:
     ///   - key: key name of header
     ///   - value: value of specified key
     public mutating func addHeader(key: String, value: String) {
-        self.headers[key] = value
+        headers.add(name: key, value: value)
     }
 
-    /// Adding Authorization header
+    /// Append or update header via `HTTPHeader` instance
     ///
-    /// - Parameter token: token string which will be added as a Authorization header with custom prefix
-    @available(*, deprecated, message: "Use RequestAdapter with custom SessionManager instead.")
-    public mutating func addAuth(token: String, prefix: String? = nil) {
-        var prefixKey = (prefix ?? "")
-        if !prefixKey.isEmpty {
-            prefixKey += " "
-        }
-        self.addHeader(key: "Authorization", value: prefixKey + token)
+    /// - Parameters:
+    ///   - header: HTTPHeader
+    public mutating func addHeader(header: HTTPHeader) {
+        headers.add(header)
     }
 }
 
 /// ReactiveX REST Client
 open class RxRestClient {
-
     // MARK: - Private vars
+
     private var operationQueue: OperationQueue
     private var backgroundWorkScheduler: OperationQueueScheduler
     // swiftlint:disable force_try
@@ -64,10 +59,11 @@ open class RxRestClient {
     private let baseUrl: URL?
 
     // MARK: - Initializer
+
     /// Initialize RxRestClient
     ///
     /// - Parameters:
-    ///   - baseUrl: Base Url which will be used for all requests, default value is nil so you can use absalute URL in requests
+    ///   - baseUrl: Base Url which will be used for all requests, default value is nil so you can use Absolute URL in requests
     ///   - options: RxRestClientOptions object
     public init(baseUrl: URL? = nil, options: RxRestClientOptions = RxRestClientOptions.default) {
         self.options = options
@@ -79,12 +75,13 @@ open class RxRestClient {
     }
 
     // MARK: - POST Requests
+
     /// Do POST Request
     ///
     /// - Parameters:
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
-    ///   - object: dictinary representing body of request
-    /// - Returns: An observable of a the response state
+    ///   - object: dictionary representing body of request
+    /// - Returns: An observable of response state
     public func post<T: ResponseState>(_ endpoint: String, object: [String: Any]) -> Observable<T> {
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
@@ -95,9 +92,9 @@ open class RxRestClient {
     /// Do POST Request
     ///
     /// - Parameters:
-    ///   - url: absalute url
-    ///   - object: dictinary representing body of request
-    /// - Returns: An observable of a the response state
+    ///   - url: Absolute url
+    ///   - object: dictionary representing body of request
+    /// - Returns: An observable of response state
     public func post<T: ResponseState>(url: URL, object: [String: Any]) -> Observable<T> {
         return run(request(.post, url, object: object, encoding: options.bodyEncoding))
     }
@@ -107,7 +104,7 @@ open class RxRestClient {
     /// - Parameters:
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
     ///   - array: array representing body of request
-    /// - Returns: An observable of a the response state
+    /// - Returns: An observable of response state
     public func post<T: ResponseState>(_ endpoint: String, array: [String]) -> Observable<T> {
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
@@ -118,9 +115,9 @@ open class RxRestClient {
     /// Do POST Request
     ///
     /// - Parameters:
-    ///   - url: absalute url
+    ///   - url: Absolute url
     ///   - array: array representing body of request
-    /// - Returns: An observable of a the response state
+    /// - Returns: An observable of response state
     public func post<T: ResponseState>(url: URL, array: [String]) -> Observable<T> {
         return run(request(.post, url, array: array))
     }
@@ -130,7 +127,7 @@ open class RxRestClient {
     /// - Parameters:
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
     ///   - body: Encodable model representing body of request
-    /// - Returns: An observable of a the response state
+    /// - Returns: An observable of response state
     public func post<T: ResponseState>(_ endpoint: String, body: Encodable) -> Observable<T> {
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
@@ -139,12 +136,13 @@ open class RxRestClient {
     }
 
     // MARK: - PUT Requests
+
     /// Do PUT Request
     ///
     /// - Parameters:
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
-    ///   - object: dictinary representing body of request
-    /// - Returns: An observable of a the response state
+    ///   - object: dictionary representing body of request
+    /// - Returns: An observable of response state
     public func put<T: ResponseState>(_ endpoint: String, object: [String: Any]) -> Observable<T> {
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
@@ -155,19 +153,19 @@ open class RxRestClient {
     /// Do PUT Request
     ///
     /// - Parameters:
-    ///   - url: absalute url
-    ///   - object: dictinary representing body of request
-    /// - Returns: An observable of a the response state
+    ///   - url: Absolute url
+    ///   - object: dictionary representing body of request
+    /// - Returns: An observable of response state
     public func put<T: ResponseState>(url: URL, object: [String: Any]) -> Observable<T> {
         return run(request(.put, url, object: object, encoding: options.bodyEncoding))
     }
-    
+
     /// Do PUT Request
     ///
     /// - Parameters:
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
     ///   - array: array representing body of request
-    /// - Returns: An observable of a the response state
+    /// - Returns: An observable of response state
     public func put<T: ResponseState>(_ endpoint: String, array: [String]) -> Observable<T> {
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
@@ -178,9 +176,9 @@ open class RxRestClient {
     /// Do PUT Request
     ///
     /// - Parameters:
-    ///   - url: absalute url
+    ///   - url: Absolute url
     ///   - array: array representing body of request
-    /// - Returns: An observable of a the response state
+    /// - Returns: An observable of response state
     public func put<T: ResponseState>(url: URL, array: [String]) -> Observable<T> {
         return run(request(.put, url, array: array))
     }
@@ -190,7 +188,7 @@ open class RxRestClient {
     /// - Parameters:
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
     ///   - body: Encodable model representing body of request
-    /// - Returns: An observable of a the response state
+    /// - Returns: An observable of response state
     public func put<T: ResponseState>(_ endpoint: String, body: Encodable) -> Observable<T> {
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
@@ -199,12 +197,13 @@ open class RxRestClient {
     }
 
     // MARK: - PATCH Requests
+
     /// Do PATCH Request
     ///
     /// - Parameters:
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
-    ///   - object: dictinary representing body of request
-    /// - Returns: An observable of a the response state
+    ///   - object: dictionary representing body of request
+    /// - Returns: An observable of response state
     public func patch<T: ResponseState>(_ endpoint: String, object: [String: Any]) -> Observable<T> {
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
@@ -215,9 +214,9 @@ open class RxRestClient {
     /// Do PATCH Request
     ///
     /// - Parameters:
-    ///   - url: absalute url
-    ///   - object: dictinary representing body of request
-    /// - Returns: An observable of a the response state
+    ///   - url: Absolute url
+    ///   - object: dictionary representing body of request
+    /// - Returns: An observable of response state
     public func patch<T: ResponseState>(url: URL, object: [String: Any]) -> Observable<T> {
         return run(request(.patch, url, object: object, encoding: options.bodyEncoding))
     }
@@ -227,7 +226,7 @@ open class RxRestClient {
     /// - Parameters:
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
     ///   - body: Encodable model representing body of request
-    /// - Returns: An observable of a the response state
+    /// - Returns: An observable of response state
     public func patch<T: ResponseState>(_ endpoint: String, body: Encodable) -> Observable<T> {
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
@@ -236,12 +235,13 @@ open class RxRestClient {
     }
 
     // MARK: - DELETE Requests
+
     /// Do DELETE Request
     ///
     /// - Parameters:
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
-    ///   - object: dictinary representing body of request, default value is empty
-    /// - Returns: An observable of a the response state
+    ///   - object: dictionary representing body of request, default value is empty
+    /// - Returns: An observable of response state
     public func delete<T: ResponseState>(_ endpoint: String, object: [String: Any] = [:]) -> Observable<T> {
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
@@ -252,9 +252,9 @@ open class RxRestClient {
     /// Do DELETE Request
     ///
     /// - Parameters:
-    ///   - url: absalute url
-    ///   - object: dictinary representing body of request, default value is empty
-    /// - Returns: An observable of a the response state
+    ///   - url: Absolute url
+    ///   - object: dictionary representing body of request, default value is empty
+    /// - Returns: An observable of response state
     public func delete<T: ResponseState>(url: URL, object: [String: Any] = [:]) -> Observable<T> {
         return run(request(.delete, url, object: object, encoding: options.queryEncoding))
     }
@@ -264,7 +264,7 @@ open class RxRestClient {
     /// - Parameters:
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
     ///   - body: Encodable model representing body of request
-    /// - Returns: An observable of a the response state
+    /// - Returns: An observable of response state
     public func delete<T: ResponseState>(_ endpoint: String, body: Encodable) -> Observable<T> {
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
@@ -273,12 +273,13 @@ open class RxRestClient {
     }
 
     // MARK: - GET Requests
+
     /// Do GET Request
     ///
     /// - Parameters:
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
-    ///   - query: dictinary representing query of request, default value is empty
-    /// - Returns: An observable of a the response state
+    ///   - query: dictionary representing query of request, default value is empty
+    /// - Returns: An observable of response state
     public func get<T: ResponseState>(_ endpoint: String, query: [String: Any] = [:]) -> Observable<T> {
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
@@ -289,9 +290,9 @@ open class RxRestClient {
     /// Do GET Request
     ///
     /// - Parameters:
-    ///   - url: absalute url
-    ///   - query: dictinary representing query of request, default value is empty
-    /// - Returns: An observable of a the response state
+    ///   - url: Absolute url
+    ///   - query: dictionary representing query of request, default value is empty
+    /// - Returns: An observable of response state
     public func get<T: ResponseState>(url: URL, query: [String: Any] = [:]) -> Observable<T> {
         return run(request(.get, url, object: query, encoding: options.queryEncoding))
     }
@@ -301,7 +302,7 @@ open class RxRestClient {
     /// - Parameters:
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
     ///   - query: Encodable model representing query of request
-    /// - Returns: An observable of a the response state
+    /// - Returns: An observable of response state
     public func get<T: ResponseState>(_ endpoint: String, query: Encodable) -> Observable<T> {
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
@@ -312,25 +313,23 @@ open class RxRestClient {
     /// Do GET Request
     ///
     /// - Parameters:
-    ///   - url: absalute url
+    ///   - url: Absolute url
     ///   - query: Encodable model representing query of request
-    /// - Returns: An observable of a the response state
+    /// - Returns: An observable of response state
     public func get<T: ResponseState>(url: URL, query: Encodable) -> Observable<T> {
         return get(url: url, query: query.toDictionary(encoder: options.jsonEncoder))
     }
-
 
     /// Do Get Request
     ///
     /// - Parameters:
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
     ///   - query: PagingQueryProtocol model representing query of request with pagination
-    /// - Returns: An observable of a the response state with pagination
+    /// - Returns: An observable of response state with pagination
     public func get<T: PagingState<R>, R: PagingResponseProtocol>(
         _ endpoint: String,
         query: PagingQueryProtocol,
         loadNextPageTrigger: Observable<Void>) -> Observable<T> {
-
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
         }
@@ -342,30 +341,27 @@ open class RxRestClient {
     /// - Parameters:
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
     ///   - query: PagingQueryProtocol model representing query of request with pagination
-    /// - Returns: An observable of a the response state with pagination
+    /// - Returns: An observable of response state with pagination
     public func get<T: PagingState<R>, R: PagingResponseProtocol>(
         url: URL,
         query: PagingQueryProtocol,
         loadNextPageTrigger: Observable<Void>) -> Observable<T> {
-
         return recursivelyGet(url: url, query: query, loadedSoFar: [], loadNextPageTrigger: loadNextPageTrigger)
     }
-
 
     /// Do Get Request recursively by appending the result of each request to previous one
     ///
     /// - Parameters:
-    ///   - url: absalute url
+    ///   - url: Absolute url
     ///   - query: PagingQueryProtocol model representing query of request with pagination
     ///   - loadedSoFar: An array of items previously loaded
     ///   - loadNextPageTrigger: An observable to trigger next page load event
-    /// - Returns: An observable of a the response state with pagination
+    /// - Returns: An observable of response state with pagination
     private func recursivelyGet<T: PagingState<R>, R: PagingResponseProtocol>(
         url: URL,
         query: PagingQueryProtocol,
         loadedSoFar: [R.Item],
         loadNextPageTrigger: Observable<Void>) -> Observable<T> {
-
         return get(url: url, query: query)
             .flatMapLatest { (state: T) -> Observable<T> in
 
@@ -397,58 +393,56 @@ open class RxRestClient {
                     // load next page
                     self.recursivelyGet(url: url, query: newQuery, loadedSoFar: loadedValues, loadNextPageTrigger: loadNextPageTrigger) as Observable<T>
                 ])
-        }
+            }
     }
 
     // MARK: - Request builder
-    /// Build and return an observable of a the DataRequest
+
+    /// Build and return an observable of DataRequest
     ///
     /// - Parameters:
     ///   - method: Alamofire method object (example: .get, post, etc)
-    ///   - url: absalute url
+    ///   - url: Absolute url
     ///   - object: A dictionary containing all necessary options
     ///   - encoding: The kind of encoding used to process parameters
-    /// - Returns: An observable of a the created DataRequest
+    /// - Returns: An observable of created DataRequest
     public func request(_ method: HTTPMethod, _ url: URLConvertible, object: [String: Any], encoding: ParameterEncoding) -> Observable<DataRequest> {
-        return getSessionManager().rx.request(
+        return options.sessionManager.rx.request(
             method,
             url,
             parameters: object,
             encoding: encoding,
-            headers: options.headers
-        )
+            headers: options.headers)
     }
 
-    /// Build and return an observable of a the DataRequest
+    /// Build and return an observable of DataRequest
     ///
     /// - Parameters:
     ///   - method: Alamofire method object (example: .get, post, etc)
-    ///   - url: absalute url
+    ///   - url: Absolute url
     ///   - array: An array containing all necessary options
-    /// - Returns: An observable of a the created DataRequest
+    /// - Returns: An observable of created DataRequest
     public func request(_ method: HTTPMethod, _ url: URLConvertible, array: [Any]) -> Observable<DataRequest> {
-        return getSessionManager().rx.request(
+        return options.sessionManager.rx.request(
             method,
             url,
             parameters: [:],
             encoding: JSONArrayEncoding(array),
-            headers: options.headers
-        )
+            headers: options.headers)
     }
 
     // MARK: - Request runner
+
     /// Will run DataRequest
     ///
     /// - Parameter request: An observable of the DataRequest
-    /// - Returns: An observable of a the response state
+    /// - Returns: An observable of response state
     public func run<T: ResponseState>(_ request: Observable<DataRequest>) -> Observable<T> {
         return request
             .validate { [unowned self] request, response, data in
-                return self.validate(request, response, data)
+                self.validate(request, response, data)
             }
-            .flatMap { [options] request -> Observable<(HTTPURLResponse, T.Body?)> in
-                options.logger?.log(request)
-
+            .flatMap { request -> Observable<(HTTPURLResponse, T.Body?)> in
                 switch T.Body.self {
                 case is String.Type:
                     return request.rx.responseString().map { ($0.0, $0.1 as? T.Body) }
@@ -458,14 +452,9 @@ open class RxRestClient {
             }
             .observeOn(backgroundWorkScheduler)
             .map { (httpResponse, body) -> RestResponseStatus in
-                return .custom(response: (httpResponse, body))
+                .custom(response: (httpResponse, body))
             }
-            .catchError { e in
-                if let response = e as? BaseResponse {
-                    return Observable.just(.base(state: RxRestClient.checkBaseState(response: response)))
-                }
-                return Observable.error(e)
-            }
+            .catchError(handleError)
             .retry(options.retryCount)
             .retryOnBecomesReachable(.base(state: BaseState.offline), reachabilityService: reachabilityService)
             .flatMap { response -> Observable<T> in
@@ -479,20 +468,20 @@ open class RxRestClient {
     }
 
     // MARK: - Uploads
+
     /// Upload images or files using multipart form data
     ///
     /// - Parameters:
-    ///   - builder: bulder of MultipartFormData
+    ///   - builder: Builder of MultipartFormData
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl
     ///   - method: The HTTP method. `.post` by default.
     ///   - headers: The HTTP headers. `nil` by default. When value is `nil` the headers from options will be used
-    /// - Returns: An observable of a the response state
+    /// - Returns: An observable of response state
     public func upload<T: ResponseState>(
         builder: MultipartFormDataBuilder,
         endpoint: String,
         method: HTTPMethod = .post,
         headers: HTTPHeaders? = nil) -> Observable<T> {
-
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
         }
@@ -502,39 +491,36 @@ open class RxRestClient {
     /// Upload images or files using multipart form data
     ///
     /// - Parameters:
-    ///   - builder: bulder of MultipartFormData
-    ///   - url: absalute url
+    ///   - builder: Builder of MultipartFormData
+    ///   - url: Absolute URL
     ///   - method: The HTTP method. `.post` by default.
     ///   - headers: The HTTP headers. `nil` by default. When value is `nil` the headers from options will be used.
-    /// - Returns: An observable of a the response state
+    /// - Returns: An observable of response state
     public func upload<T: ResponseState>(
         builder: MultipartFormDataBuilder,
         to url: URLConvertible,
         method: HTTPMethod = .post,
         headers: HTTPHeaders? = nil) -> Observable<T> {
-
         return run(
-            getSessionManager().rx
+            options.sessionManager.rx
                 .upload(multipartFormData: builder.build(), to: url, method: method, headers: headers ?? options.headers)
-                .map { $0.0 }
+                .map { $0 } // Casting to DataRequest
         )
-
     }
 
     /// Upload file using URL.
     ///
     /// - Parameters:
-    ///   - file: An url of file to be uploaded.
+    ///   - file: URL of file to be uploaded.
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl.
     ///   - method: The HTTP method. `.post` by default.
     ///   - headers: The HTTP headers. `nil` by default. When value is `nil` the headers from options will be used.
-    /// - Returns: An observable of a the response state.
+    /// - Returns: An observable of response state.
     public func upload<T: ResponseState>(
         _ file: URL,
         endpoint: String,
         method: HTTPMethod = .post,
         headers: HTTPHeaders? = nil) -> Observable<T> {
-
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
         }
@@ -545,18 +531,17 @@ open class RxRestClient {
     ///
     /// - Parameters:
     ///   - file: An url of file to be uploaded.
-    ///   - url: Absalute url.
+    ///   - url: Absolute url.
     ///   - method: The HTTP method. `.post` by default.
     ///   - headers: The HTTP headers. `nil` by default. When value is `nil` the headers from options will be used.
-    /// - Returns: An observable of a the response state.
+    /// - Returns: An observable of response state.
     public func upload<T: ResponseState>(
         _ file: URL,
         to url: URLConvertible,
         method: HTTPMethod = .post,
         headers: HTTPHeaders? = nil) -> Observable<T> {
-
         return run(
-            getSessionManager().rx
+            options.sessionManager.rx
                 .upload(file, to: url, method: method, headers: headers ?? options.headers)
                 .map { $0 } // Casting to DataRequest
         )
@@ -565,17 +550,16 @@ open class RxRestClient {
     /// Upload file using URL.
     ///
     /// - Parameters:
-    ///   - file: An url of file to be uploaded.
+    ///   - file: URL of file to be uploaded.
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl.
     ///   - method: The HTTP method. `.post` by default.
     ///   - headers: The HTTP headers. `nil` by default. When value is `nil` the headers from options will be used.
-    /// - Returns: An observable of a the `ResponseState` and `RxProgress` tuple.
+    /// - Returns: An observable of `ResponseState` and `RxProgress` tuple.
     public func upload<T: ResponseState>(
         _ file: URL,
         endpoint: String,
         method: HTTPMethod = .post,
         headers: HTTPHeaders? = nil) -> Observable<(T?, RxProgress)> {
-
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
         }
@@ -585,18 +569,17 @@ open class RxRestClient {
     /// Upload file using URL.
     ///
     /// - Parameters:
-    ///   - file: An url of file to be uploaded.
-    ///   - url: Absalute url.
+    ///   - file: URL of file to be uploaded.
+    ///   - url: Absolute url.
     ///   - method: The HTTP method. `.post` by default.
     ///   - headers: The HTTP headers. `nil` by default. When value is `nil` the headers from options will be used.
-    /// - Returns: An observable of a the `ResponseState` and `RxProgress` tuple.
+    /// - Returns: An observable of `ResponseState` and `RxProgress` tuple.
     public func upload<T: ResponseState>(
         _ file: URL,
         to url: URLConvertible,
         method: HTTPMethod = .post,
         headers: HTTPHeaders? = nil) -> Observable<(T?, RxProgress)> {
-
-        return getSessionManager().rx
+        return options.sessionManager.rx
             .upload(file, to: url, method: method, headers: headers ?? options.headers)
             .flatMap { [weak self] (request: UploadRequest) -> Observable<(T?, RxProgress)> in
                 guard let strongSelf = self else {
@@ -607,7 +590,7 @@ open class RxRestClient {
                     .startWith(nil as T?)
                 let progress = request.rx.progress()
                 return Observable.combineLatest(state, progress) { ($0, $1) }
-        }
+            }
     }
 
     /// Upload data.
@@ -617,13 +600,12 @@ open class RxRestClient {
     ///   - endpoint: Relative path of endpoint which will be appended to baseUrl.
     ///   - method: The HTTP method. `.post` by default.
     ///   - headers: The HTTP headers. `nil` by default. When value is `nil` the headers from options will be used.
-    /// - Returns: An observable of a the `ResponseState`.
+    /// - Returns: An observable of `ResponseState`.
     public func upload<T: ResponseState>(
         _ data: Data,
         endpoint: String,
         method: HTTPMethod = .post,
         headers: HTTPHeaders? = nil) -> Observable<T> {
-
         guard let url = buildURL(endpoint) else {
             return Observable.error(RxRestClientError.urlBuildFailed)
         }
@@ -634,18 +616,17 @@ open class RxRestClient {
     ///
     /// - Parameters:
     ///   - data: A `Data` object to be uploaded.
-    ///   - url: Absalute url.
+    ///   - url: Absolute url.
     ///   - method: The HTTP method. `.post` by default.
     ///   - headers: The HTTP headers. `nil` by default. When value is `nil` the headers from options will be used.
-    /// - Returns: An observable of a the `ResponseState`.
+    /// - Returns: An observable of `ResponseState`.
     public func upload<T: ResponseState>(
         _ data: Data,
         to url: URLConvertible,
         method: HTTPMethod = .post,
         headers: HTTPHeaders? = nil) -> Observable<T> {
-
         return run(
-            getSessionManager().rx
+            options.sessionManager.rx
                 .upload(data, to: url, method: method, headers: headers ?? options.headers)
                 .map { $0 } // Casting to DataRequest
         )
@@ -659,21 +640,36 @@ open class RxRestClient {
     ///   - data: Response body
     /// - Returns: ValidationResult
     open func validate(_ request: URLRequest?, _ response: HTTPURLResponse, _ data: Data?) -> Request.ValidationResult {
-
         if let baseResponse = RxRestClient.checkBaseResponse(response, data) {
             return .failure(baseResponse)
         }
-        return .success
+        return .success(())
+    }
+
+    /// Handle errors happened during any request
+    /// - Parameter error: `Error` instance caught
+    /// - Returns: An observable of `RestResponseStatus`
+    open func handleError(error: Error) -> Observable<RestResponseStatus> {
+        if let error = error.asAFError {
+            if case let AFError.responseValidationFailed(reason: reason) = error,
+                case let AFError.ResponseValidationFailureReason.customValidationFailed(error: response as BaseResponse) = reason {
+                return Observable.just(.base(state: RxRestClient.checkBaseState(response: response)))
+            } else {
+                return Observable.just(.base(state: BaseState(unexpectedError: error)))
+            }
+        }
+        return Observable.error(error)
     }
 
     // MARK: - Checking base response cases
+
     /// Checking base response cases.
     ///
     /// - Parameters:
     ///   - httpResponse: `HTTPURLResponse` object.
     ///   - string: The body of response as a string.
     /// - Returns: A `BaseResponse` enum.
-    private static func checkBaseResponse(_ httpResponse: HTTPURLResponse, _ body: Any?) -> BaseResponse? {
+    private static func checkBaseResponse(_ httpResponse: HTTPURLResponse, _ body: Data?) -> BaseResponse? {
         switch httpResponse.statusCode {
         case 400:
             return .badRequest(body: body)
@@ -693,10 +689,11 @@ open class RxRestClient {
     }
 
     // MARK: - Checking base state cases
+
     /// Checking base state cases.
     ///
     /// - Parameter response: `BaseResponse` enum.
-    /// - Returns: The corresnponding `BaseState`.
+    /// - Returns: The corresponding `BaseState`.
     private static func checkBaseState(response: BaseResponse) -> BaseState {
         switch response {
         case .serviceOffline:
@@ -722,13 +719,6 @@ open class RxRestClient {
     /// - Returns: Built optional URL.
     private func buildURL(_ endpoint: String) -> URL? {
         return baseUrl?.appendingPathComponent(endpoint) ?? URL(string: endpoint)
-    }
-
-    /// Get session manager
-    ///
-    /// - Returns: Session Managher instance
-    private func getSessionManager() -> SessionManager {
-        return options.sessionManager ?? .default
     }
 
 }

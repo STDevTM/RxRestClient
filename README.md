@@ -12,8 +12,12 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Requirements
 
 * iOS 10.0+
-* Swift 5.0+
-* Xcode 10.2+
+* Swift 5.1+
+* Xcode 11+
+
+## Migration Guides
+
+- [RxRestClient 2.0 Migration Guide](./Documentation/RxRestClient%202.0%20Migration%20Guide.md)
 
 ## Installation
 
@@ -32,8 +36,7 @@ pod 'RxRestClient'
 * Retry on any error
 * Handle network reachability status
 * Retry on become reachable
-* Ability to use absalute and relative urls
-* Logger
+* Ability to use absolute and relative urls
 * Swift Codable protocol support
 * Use custom SessionManager
 * Pagination support
@@ -109,7 +112,7 @@ options.addHeader(key: "x-apikey", value: "<API_KEY>")
 client = RxRestClient(baseUrl: <BASE _URL>), options: options)
 ```
 
-### Relative vs absalute url
+### Relative vs absolute url
 
 In order to use relative url you need to give `<BASE_URL>` when initializing client object.
 
@@ -117,7 +120,7 @@ In order to use relative url you need to give `<BASE_URL>` when initializing cli
 let client = RxRestClient(baseURL: <BASE_URL>)
 ```
 
-When calling any request you can provide either `String` endpoint or absalute `URL`. If you will `String` it will be appended to `baseURL`.
+When calling any request you can provide either `String` endpoint or absolute `URL`. If you will `String` it will be appended to `baseURL`.
 
 ```swift
 client.get("rest/contacts")
@@ -125,7 +128,7 @@ client.get("rest/contacts")
 
 If `baseURL` is `nil` then it will try to convert provided `String` to `URL`.
 
-In order to use absalute url even when your client has `baseURL` you can provide `URL` like this:
+In order to use absolute url even when your client has `baseURL` you can provide `URL` like this:
 
 ```swift
 if let url = URL(string: "https://api.github.com/search/repositories") {
@@ -207,13 +210,7 @@ After having all necessary models you can do your request:
 client.get("https://api.github.com/search/repositories", query: query, loadNextPageTrigger: loadNextPageTrigger)
 ```
 
-`loadNextPageTrigger` is an `Observable` with `Void` type in order to trigger client to do request for next page using new query moderl generated using `nextPage()` function. 
-
-### Logger
-
-In order to log `curl` command of sent request you can use `RxRestClientOptions.logger` option. For just printing debug description to console you can use builtin `DebugRxRestClientLogger` logger.
-
-If you prefer to have a custom logger, for example, log requests to the file, you need to implement `RxRestClientLogger` protocol and pass it as an option.
+`loadNextPageTrigger` is an `Observable` with `Void` type in order to trigger client to do request for next page using new query model generated using `nextPage()` function. 
 
 ## Author
 
@@ -221,7 +218,7 @@ Tigran Hambardzumyan, tigran@stdevmail.com
 
 ## Support
 
-Feel free to [open issuses](https://github.com/stdevteam/RxRestClient/issues/new) with any suggestions, bug reports, feature requests, questions.
+Feel free to [open issues](https://github.com/stdevteam/RxRestClient/issues/new) with any suggestions, bug reports, feature requests, questions.
 
 ## Let us know!
 
