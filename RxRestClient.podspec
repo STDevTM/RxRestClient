@@ -9,11 +9,11 @@ Pod::Spec.new do |s|
   Reactive way to interact with REST API. Send request and get responses easily. Handling basic response cases by default, for example: Not Found, Unauthorized, etc.
                        DESC
 
-  s.homepage         = 'https://github.com/stdevteam/RxRestClient'
+  s.homepage         = 'https://github.com/STDevTM/RxRestClient'
 
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Tigran Hambardzumyan' => 'tigran@stdevmail.com' }
-  s.source           = { :git => 'https://github.com/stdevteam/RxRestClient.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/STDevTM/RxRestClient.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.0'
 
