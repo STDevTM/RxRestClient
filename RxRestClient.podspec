@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'RxRestClient/Classes/**/*'
+  s.source_files = 'Sources/RxRestClient/Classes/**/*'
   
   # s.resource_bundles = {
   #   'RxRestClient' => ['RxRestClient/Assets/*.png']
