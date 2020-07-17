@@ -1,6 +1,6 @@
 # RxRestClient
 
-[![CI Status](https://img.shields.io/travis/STDevTM/RxRestClient.svg?style=flat)](https://travis-ci.org/STDevTM/RxRestClient)
+[![CI Status](https://github.com/STDevTM/RxRestClient/workflows/RxRestClient/badge.svg?branch=master)](https://github.com/STDevTM/RxRestClient/actions)
 [![Version](https://img.shields.io/cocoapods/v/RxRestClient.svg?style=flat)](https://cocoapods.org/pods/RxRestClient)
 [![License](https://img.shields.io/cocoapods/l/RxRestClient.svg?style=flat)](https://cocoapods.org/pods/RxRestClient)
 [![Platform](https://img.shields.io/cocoapods/p/RxRestClient.svg?style=flat)](https://cocoapods.org/pods/RxRestClient)
@@ -21,12 +21,40 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-RxRestClient is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+<details>
+<summary>CocoaPods</summary>
+</br>
+<p>RxRestClient is available through <a href="http://cocoapods.org">CocoaPods</a>. To install it, simply add the following line to your <code>Podfile</code>:</p>
 
-```ruby
-pod 'RxRestClient'
-```
+<pre><code class="ruby language-ruby">pod 'RxRestClient'</code></pre>
+</details>
+
+<details>
+<summary>Swift Package Manager</summary>
+</br>
+<p>You can use <a href="https://swift.org/package-manager">The Swift Package Manager</a> to install <code>RxRestClient</code> by adding the proper description to your <code>Package.swift</code> file:</p>
+
+<pre><code class="swift language-swift">import PackageDescription
+
+let package = Package(
+    name: "YOUR_PROJECT_NAME",
+    targets: [],
+    dependencies: [
+        .package(url: "https://github.com/STDevTM/RxRestClient.git", from: "2.1.0")
+    ]
+)
+</code></pre>
+
+<p>Next, add <code>RxRestClient</code> to your targets dependencies like so:</p>
+<pre><code class="swift language-swift">.target(
+    name: "YOUR_TARGET_NAME",
+    dependencies: [
+        "RxRestClient",
+    ]
+),</code></pre>
+<p>Then run <code>swift package update</code>.</p>
+
+</details>
 
 ## Features
 
