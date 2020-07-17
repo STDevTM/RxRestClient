@@ -1,0 +1,22 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Release
+
+on:
+  push:
+    tags: '*'
+
+jobs:
+  push:
+    runs-on: macos-10.15
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Deploy to Cocoapods
+      run: |
+        set -eo pipefail
+        pod lib lint --allow-warnings
+        pod trunk push --allow-warnings
+      env:
+        COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
