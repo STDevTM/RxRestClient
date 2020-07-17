@@ -26,6 +26,6 @@ Pod::Spec.new do |s|
   s.dependency 'RxSwift', '>= 5.1'
   s.dependency 'RxCocoa', '>= 5.1'
   s.dependency 'Alamofire', '>= 5.1'
-  s.dependency 'RxAlamofire', '>= 5.2'
+  s.dependency 'RxAlamofire', '>= 5.6'
 
 end

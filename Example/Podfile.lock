@@ -5,9 +5,9 @@ PODS:
   - Nimble (8.0.7)
   - ObjectMapper (3.5.2)
   - Quick (2.2.0)
-  - RxAlamofire (5.2.0):
-    - RxAlamofire/Core (= 5.2.0)
-  - RxAlamofire/Core (5.2.0):
+  - RxAlamofire (5.6.0):
+    - RxAlamofire/Core (= 5.6.0)
+  - RxAlamofire/Core (5.6.0):
     - Alamofire (~> 5.1)
     - RxSwift (~> 5.1)
   - RxCocoa (5.1.1):
@@ -20,7 +20,7 @@ PODS:
     - RxSwift (~> 5)
   - RxRestClient (2.0.0):
     - Alamofire (>= 5.1)
-    - RxAlamofire (>= 5.2)
+    - RxAlamofire (>= 5.6)
     - RxCocoa (>= 5.1)
     - RxSwift (>= 5.1)
   - RxSwift (5.1.1)
@@ -61,11 +61,11 @@ SPEC CHECKSUMS:
   Nimble: a73af6ecd4c9106f434f3d55fc54570be3739e0b
   ObjectMapper: b53ae947d370bf89423e86be7d4e2d2b2a8d3f40
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
-  RxAlamofire: 878eb06baefd76df6062889be11592434e6c4a95
+  RxAlamofire: f34ddbab56fa2a36f99737f4d4ecc22288a1384f
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
-  RxRestClient: 73179e7fd3df5506d38296f49b9e7873009db242
+  RxRestClient: ca7a1f594dc6c9328dea8cecba0a20a0b780192e
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
 
