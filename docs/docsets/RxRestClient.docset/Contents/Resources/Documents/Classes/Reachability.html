@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Reachability Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/Reachability" class="dashAnchor"></a>
+    <a title="Reachability Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">RxRestClient 2.2.0 Docs</a> (18% documented)</p>
+        <p class="header-right"><a href="https://github.com/STDevTM/RxRestClient"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">RxRestClient Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Reachability Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultReachabilityService.html">DefaultReachabilityService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultipartFormDataBuilder.html">MultipartFormDataBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PagingState.html">PagingState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Reachability.html">Reachability</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Reachability/NetworkStatus.html">– NetworkStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RxRestClient.html">RxRestClient</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:12RxRestClient31ReachabilityChangedNotificationSo18NSNotificationNameavp">ReachabilityChangedNotification</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/BaseResponse.html">BaseResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MIMETypes.html">MIMETypes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ReachabilityError.html">ReachabilityError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ReachabilityServiceError.html">ReachabilityServiceError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ReachabilityStatus.html">ReachabilityStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RestResponseStatus.html">RestResponseStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RxRestClientError.html">RxRestClientError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ServiceState.html">ServiceState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/s:10Foundation4DataV">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Encodable.html">Encodable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSString.html">NSString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/URL.html">URL</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/PagingQueryProtocol.html">PagingQueryProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PagingResponseProtocol.html">PagingResponseProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ReachabilityService.html">ReachabilityService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:12RxRestClient12ResponseBodyP">ResponseBody</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ResponseState.html">ResponseState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/BaseState.html">BaseState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultState.html">DefaultState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RxRestClientOptions.html">RxRestClientOptions</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Reachability</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Reachability</span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient12ReachabilityC16NetworkReachablea"></a>
+                    <a name="//apple_ref/swift/Alias/NetworkReachable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient12ReachabilityC16NetworkReachablea">NetworkReachable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">NetworkReachable</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Reachability</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient12ReachabilityC18NetworkUnreachablea"></a>
+                    <a name="//apple_ref/swift/Alias/NetworkUnreachable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient12ReachabilityC18NetworkUnreachablea">NetworkUnreachable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">NetworkUnreachable</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Reachability</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient12ReachabilityC13NetworkStatusO"></a>
+                    <a name="//apple_ref/swift/Enum/NetworkStatus" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient12ReachabilityC13NetworkStatusO">NetworkStatus</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="../Classes/Reachability/NetworkStatus.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">NetworkStatus</span> <span class="p">:</span> <span class="kt">CustomStringConvertible</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient12ReachabilityC13whenReachableyACcSgvp"></a>
+                    <a name="//apple_ref/swift/Property/whenReachable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient12ReachabilityC13whenReachableyACcSgvp">whenReachable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">whenReachable</span><span class="p">:</span> <span class="kt"><a href="../Classes/Reachability.html#/s:12RxRestClient12ReachabilityC16NetworkReachablea">NetworkReachable</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient12ReachabilityC15whenUnreachableyACcSgvp"></a>
+                    <a name="//apple_ref/swift/Property/whenUnreachable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient12ReachabilityC15whenUnreachableyACcSgvp">whenUnreachable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">whenUnreachable</span><span class="p">:</span> <span class="kt"><a href="../Classes/Reachability.html#/s:12RxRestClient12ReachabilityC18NetworkUnreachablea">NetworkUnreachable</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient12ReachabilityC15reachableOnWWANSbvp"></a>
+                    <a name="//apple_ref/swift/Property/reachableOnWWAN" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient12ReachabilityC15reachableOnWWANSbvp">reachableOnWWAN</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">reachableOnWWAN</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient12ReachabilityC18notificationCenterSo014NSNotificationF0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/notificationCenter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient12ReachabilityC18notificationCenterSo014NSNotificationF0Cvp">notificationCenter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">notificationCenter</span><span class="p">:</span> <span class="kt">NotificationCenter</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient12ReachabilityC07currentD6StringSSvp"></a>
+                    <a name="//apple_ref/swift/Property/currentReachabilityString" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient12ReachabilityC07currentD6StringSSvp">currentReachabilityString</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">currentReachabilityString</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient12ReachabilityC07currentD6StatusAC07NetworkF0Ovp"></a>
+                    <a name="//apple_ref/swift/Property/currentReachabilityStatus" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient12ReachabilityC07currentD6StatusAC07NetworkF0Ovp">currentReachabilityStatus</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">currentReachabilityStatus</span><span class="p">:</span> <span class="kt"><a href="../Classes/Reachability/NetworkStatus.html">NetworkStatus</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient12ReachabilityC15reachabilityRefACSo09SCNetworkdF0a_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(reachabilityRef:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient12ReachabilityC15reachabilityRefACSo09SCNetworkdF0a_tcfc">init(reachabilityRef:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">required</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">reachabilityRef</span><span class="p">:</span> <span class="kt">SCNetworkReachability</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient12ReachabilityC8hostnameACSgSS_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(hostname:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient12ReachabilityC8hostnameACSgSS_tcfc">init(hostname:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">hostname</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient12ReachabilityCACSgycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient12ReachabilityCACSgycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">?()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/%2A%2A%2A%20Notifier%20methods%20%2A%2A%2A"></a>
+                <a name="//apple_ref/swift/Section/*** Notifier methods ***" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/%2A%2A%2A%20Notifier%20methods%20%2A%2A%2A"></a>
+                  <h3 class="section-name"><p>*** Notifier methods ***</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient12ReachabilityC13startNotifieryyKF"></a>
+                    <a name="//apple_ref/swift/Method/startNotifier()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient12ReachabilityC13startNotifieryyKF">startNotifier()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">startNotifier</span><span class="p">()</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient12ReachabilityC12stopNotifieryyF"></a>
+                    <a name="//apple_ref/swift/Method/stopNotifier()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient12ReachabilityC12stopNotifieryyF">stopNotifier()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">stopNotifier</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/%2A%2A%2A%20Connection%20test%20methods%20%2A%2A%2A"></a>
+                <a name="//apple_ref/swift/Section/*** Connection test methods ***" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/%2A%2A%2A%20Connection%20test%20methods%20%2A%2A%2A"></a>
+                  <h3 class="section-name"><p>*** Connection test methods ***</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient12ReachabilityC11isReachableSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isReachable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient12ReachabilityC11isReachableSbvp">isReachable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isReachable</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient12ReachabilityC18isReachableViaWWANSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isReachableViaWWAN" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient12ReachabilityC18isReachableViaWWANSbvp">isReachableViaWWAN</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isReachableViaWWAN</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient12ReachabilityC18isReachableViaWiFiSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isReachableViaWiFi" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient12ReachabilityC18isReachableViaWiFiSbvp">isReachableViaWiFi</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isReachableViaWiFi</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient12ReachabilityC11descriptionSSvp"></a>
+                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient12ReachabilityC11descriptionSSvp">description</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://github.com/hamtiko" target="_blank" rel="external">Tigran Hambardzumyan</a>. All rights reserved. (Last updated: 2020-07-24)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

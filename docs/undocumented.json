@@ -1,0 +1,1538 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Extensions/Encodable+Extensions.swift",
+      "line": 11,
+      "symbol": "Encodable.toDictionary(encoder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Extensions/Encodable+Extensions.swift",
+      "line": 16,
+      "symbol": "Encodable.toJSONString(encoder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 13,
+      "symbol": "MIMETypes",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 14,
+      "symbol": "MIMETypes.default",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 15,
+      "symbol": "MIMETypes.css",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 16,
+      "symbol": "MIMETypes.wbmp",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 17,
+      "symbol": "MIMETypes.xls",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 18,
+      "symbol": "MIMETypes.wml",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 19,
+      "symbol": "MIMETypes.tk",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 20,
+      "symbol": "MIMETypes.jad",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 21,
+      "symbol": "MIMETypes.pl",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 22,
+      "symbol": "MIMETypes.mpeg",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 23,
+      "symbol": "MIMETypes.xspf",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 24,
+      "symbol": "MIMETypes.m4a",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 25,
+      "symbol": "MIMETypes.woff",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 26,
+      "symbol": "MIMETypes.img",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 27,
+      "symbol": "MIMETypes.mp4",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 28,
+      "symbol": "MIMETypes.crt",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 29,
+      "symbol": "MIMETypes.m3u8",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 30,
+      "symbol": "MIMETypes.rar",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 31,
+      "symbol": "MIMETypes.tcl",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 32,
+      "symbol": "MIMETypes.ts",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 33,
+      "symbol": "MIMETypes.eot",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 34,
+      "symbol": "MIMETypes.rtf",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 35,
+      "symbol": "MIMETypes.gpp",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 36,
+      "symbol": "MIMETypes.shtml",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 37,
+      "symbol": "MIMETypes.mng",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 38,
+      "symbol": "MIMETypes.kmz",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 39,
+      "symbol": "MIMETypes.iso",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 40,
+      "symbol": "MIMETypes.jpg",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 41,
+      "symbol": "MIMETypes.bmp",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 42,
+      "symbol": "MIMETypes.wmv",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 43,
+      "symbol": "MIMETypes.txt",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 44,
+      "symbol": "MIMETypes.sit",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 45,
+      "symbol": "MIMETypes.mp3",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 46,
+      "symbol": "MIMETypes.msi",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 47,
+      "symbol": "MIMETypes.ps",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 48,
+      "symbol": "MIMETypes.xlsx",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 49,
+      "symbol": "MIMETypes.sea",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 50,
+      "symbol": "MIMETypes.png",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 51,
+      "symbol": "MIMETypes.wmlc",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 52,
+      "symbol": "MIMETypes.json",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 53,
+      "symbol": "MIMETypes.zip",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 54,
+      "symbol": "MIMETypes.bin",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 55,
+      "symbol": "MIMETypes.jng",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 56,
+      "symbol": "MIMETypes.pdb",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 57,
+      "symbol": "MIMETypes.war",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 58,
+      "symbol": "MIMETypes.rpm",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 59,
+      "symbol": "MIMETypes.eps",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 60,
+      "symbol": "MIMETypes.dll",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 61,
+      "symbol": "MIMETypes.ai",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 62,
+      "symbol": "MIMETypes.atom",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 63,
+      "symbol": "MIMETypes.xml",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 64,
+      "symbol": "MIMETypes.kar",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 65,
+      "symbol": "MIMETypes.mml",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 66,
+      "symbol": "MIMETypes.asx",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 67,
+      "symbol": "MIMETypes.webp",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 68,
+      "symbol": "MIMETypes.m4v",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 69,
+      "symbol": "MIMETypes.md",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 70,
+      "symbol": "MIMETypes.ppt",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 71,
+      "symbol": "MIMETypes.ico",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 72,
+      "symbol": "MIMETypes.pem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 73,
+      "symbol": "MIMETypes.mpg",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 74,
+      "symbol": "MIMETypes.webm",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 75,
+      "symbol": "MIMETypes.prc",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 76,
+      "symbol": "MIMETypes.hqx",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 77,
+      "symbol": "MIMETypes.kml",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 78,
+      "symbol": "MIMETypes.gp",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 79,
+      "symbol": "MIMETypes.deb",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 80,
+      "symbol": "MIMETypes.jardiff",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 81,
+      "symbol": "MIMETypes.htc",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 82,
+      "symbol": "MIMETypes.dmg",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 83,
+      "symbol": "MIMETypes.jpeg",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 84,
+      "symbol": "MIMETypes.pptx",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 85,
+      "symbol": "MIMETypes.htm",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 86,
+      "symbol": "MIMETypes.swf",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 87,
+      "symbol": "MIMETypes.msp",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 88,
+      "symbol": "MIMETypes.der",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 89,
+      "symbol": "MIMETypes.doc",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 90,
+      "symbol": "MIMETypes.tiff",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 91,
+      "symbol": "MIMETypes.gif",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 92,
+      "symbol": "MIMETypes.ogg",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 93,
+      "symbol": "MIMETypes.svg",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 94,
+      "symbol": "MIMETypes.pm",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 95,
+      "symbol": "MIMETypes.sevenZ",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 96,
+      "symbol": "MIMETypes.tif",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 97,
+      "symbol": "MIMETypes.mov",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 98,
+      "symbol": "MIMETypes.xpi",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 99,
+      "symbol": "MIMETypes.midi",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 100,
+      "symbol": "MIMETypes.exe",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 101,
+      "symbol": "MIMETypes.pdf",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 102,
+      "symbol": "MIMETypes.js",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 103,
+      "symbol": "MIMETypes.svgz",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 104,
+      "symbol": "MIMETypes.run",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 105,
+      "symbol": "MIMETypes.docx",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 106,
+      "symbol": "MIMETypes.rss",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 107,
+      "symbol": "MIMETypes.flv",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 108,
+      "symbol": "MIMETypes.ra",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 109,
+      "symbol": "MIMETypes.msm",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 110,
+      "symbol": "MIMETypes.mid",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 111,
+      "symbol": "MIMETypes.jnlp",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 112,
+      "symbol": "MIMETypes.html",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 113,
+      "symbol": "MIMETypes.avi",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 114,
+      "symbol": "MIMETypes.xhtml",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 115,
+      "symbol": "MIMETypes.asf",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 116,
+      "symbol": "MIMETypes.jar",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 117,
+      "symbol": "MIMETypes.cco",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 118,
+      "symbol": "MIMETypes.ear",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 120,
+      "symbol": "MIMETypes.mimeType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 124,
+      "symbol": "MIMETypes.mimeType(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 138,
+      "symbol": "URL.mimeType()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 145,
+      "symbol": "NSString.mimeType()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MIMETypes.swift",
+      "line": 151,
+      "symbol": "String.mimeType()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseResponse.swift",
+      "line": 20,
+      "symbol": "BaseResponse.serviceOffline",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseResponse.swift",
+      "line": 22,
+      "symbol": "BaseResponse.badRequest(body:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseResponse.swift",
+      "line": 24,
+      "symbol": "BaseResponse.unauthorized(body:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseResponse.swift",
+      "line": 26,
+      "symbol": "BaseResponse.forbidden(body:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseResponse.swift",
+      "line": 28,
+      "symbol": "BaseResponse.notFound(body:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseResponse.swift",
+      "line": 30,
+      "symbol": "BaseResponse.validationProblem(error:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseResponse.swift",
+      "line": 32,
+      "symbol": "BaseResponse.unexpectedError(error:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseState.swift",
+      "line": 10,
+      "symbol": "BaseState",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseState.swift",
+      "line": 12,
+      "symbol": "BaseState.serviceState",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseState.swift",
+      "line": 14,
+      "symbol": "BaseState.badRequest",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseState.swift",
+      "line": 16,
+      "symbol": "BaseState.unauthorized",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseState.swift",
+      "line": 18,
+      "symbol": "BaseState.forbidden",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseState.swift",
+      "line": 20,
+      "symbol": "BaseState.notFound",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseState.swift",
+      "line": 22,
+      "symbol": "BaseState.validationProblem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseState.swift",
+      "line": 24,
+      "symbol": "BaseState.unexpectedError",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseState.swift",
+      "line": 26,
+      "symbol": "BaseState.init(serviceState:badRequest:unauthorized:forbidden:notFound:validationProblem:unexpectedError:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseState.swift",
+      "line": 44,
+      "symbol": "BaseState.empty",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseState.swift",
+      "line": 46,
+      "symbol": "BaseState.offline",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseState.swift",
+      "line": 48,
+      "symbol": "BaseState.online",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/BaseState.swift",
+      "line": 50,
+      "symbol": "BaseState.isSuccess",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/DefaultState.swift",
+      "line": 10,
+      "symbol": "DefaultState",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/DefaultState.swift",
+      "line": 12,
+      "symbol": "DefaultState.Body",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/DefaultState.swift",
+      "line": 14,
+      "symbol": "DefaultState.success",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/DefaultState.swift",
+      "line": 15,
+      "symbol": "DefaultState.state",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/DefaultState.swift",
+      "line": 17,
+      "symbol": "DefaultState.init(state:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/DefaultState.swift",
+      "line": 22,
+      "symbol": "DefaultState.init(response:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/PagingQueryProtocol.swift",
+      "line": 11,
+      "symbol": "PagingQueryProtocol",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/PagingQueryProtocol.swift",
+      "line": 12,
+      "symbol": "PagingQueryProtocol.nextPage()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/PagingResponseProtocol.swift",
+      "line": 10,
+      "symbol": "PagingResponseProtocol",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/PagingResponseProtocol.swift",
+      "line": 12,
+      "symbol": "PagingResponseProtocol.Item",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/PagingResponseProtocol.swift",
+      "line": 14,
+      "symbol": "PagingResponseProtocol.decoder",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/PagingResponseProtocol.swift",
+      "line": 16,
+      "symbol": "PagingResponseProtocol.canLoadMore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/PagingResponseProtocol.swift",
+      "line": 18,
+      "symbol": "PagingResponseProtocol.items",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/PagingState.swift",
+      "line": 10,
+      "symbol": "PagingState",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/PagingState.swift",
+      "line": 12,
+      "symbol": "PagingState.Body",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/PagingState.swift",
+      "line": 14,
+      "symbol": "PagingState.state",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/PagingState.swift",
+      "line": 15,
+      "symbol": "PagingState.response",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/PagingState.swift",
+      "line": 17,
+      "symbol": "PagingState.init(state:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/PagingState.swift",
+      "line": 21,
+      "symbol": "PagingState.init(response:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/ResponseState.swift",
+      "line": 10,
+      "symbol": "ResponseState",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/ResponseState.swift",
+      "line": 12,
+      "symbol": "ResponseState.Body",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/ResponseState.swift",
+      "line": 14,
+      "symbol": "ResponseState.state",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/ResponseState.swift",
+      "line": 16,
+      "symbol": "ResponseState.init(state:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/ResponseState.swift",
+      "line": 18,
+      "symbol": "ResponseState.init(response:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/ResponseState.swift",
+      "line": 22,
+      "symbol": "ResponseBody",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/RestResponse.swift",
+      "line": 10,
+      "symbol": "RestResponseStatus",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/RestResponse.swift",
+      "line": 11,
+      "symbol": "RestResponseStatus.base(state:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/RestResponse.swift",
+      "line": 12,
+      "symbol": "RestResponseStatus.custom(response:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/ServiceState.swift",
+      "line": 10,
+      "symbol": "ServiceState",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/ServiceState.swift",
+      "line": 11,
+      "symbol": "ServiceState.online",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Models/ServiceState.swift",
+      "line": 12,
+      "symbol": "ServiceState.offline",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/MultipartFormDataBuilder.swift",
+      "line": 11,
+      "symbol": "MultipartFormDataBuilder",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 31,
+      "symbol": "ReachabilityError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 32,
+      "symbol": "ReachabilityError.failedToCreateWithAddress(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 33,
+      "symbol": "ReachabilityError.failedToCreateWithHostname(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 34,
+      "symbol": "ReachabilityError.unableToSetCallback",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 35,
+      "symbol": "ReachabilityError.unableToSetDispatchQueue",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 38,
+      "symbol": "ReachabilityChangedNotification",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 51,
+      "symbol": "Reachability",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 53,
+      "symbol": "Reachability.NetworkReachable",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 54,
+      "symbol": "Reachability.NetworkUnreachable",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 56,
+      "symbol": "Reachability.NetworkStatus",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 58,
+      "symbol": "Reachability.NetworkStatus.notReachable",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 58,
+      "symbol": "Reachability.NetworkStatus.reachableViaWWAN",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 58,
+      "symbol": "Reachability.NetworkStatus.reachableViaWiFi",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 69,
+      "symbol": "Reachability.whenReachable",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 70,
+      "symbol": "Reachability.whenUnreachable",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 71,
+      "symbol": "Reachability.reachableOnWWAN",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 74,
+      "symbol": "Reachability.notificationCenter",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 76,
+      "symbol": "Reachability.currentReachabilityString",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 80,
+      "symbol": "Reachability.currentReachabilityStatus",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 108,
+      "symbol": "Reachability.init(reachabilityRef:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 113,
+      "symbol": "Reachability.init(hostname:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 120,
+      "symbol": "Reachability.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 142,
+      "symbol": "Reachability",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 145,
+      "symbol": "Reachability.startNotifier()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 175,
+      "symbol": "Reachability.stopNotifier()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 184,
+      "symbol": "Reachability.isReachable",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 202,
+      "symbol": "Reachability.isReachableViaWWAN",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 207,
+      "symbol": "Reachability.isReachableViaWiFi",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/Reachability.swift",
+      "line": 219,
+      "symbol": "Reachability.description",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/ReachabilityService.swift",
+      "line": 13,
+      "symbol": "ReachabilityStatus",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/ReachabilityService.swift",
+      "line": 14,
+      "symbol": "ReachabilityStatus.reachable(viaWiFi:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/ReachabilityService.swift",
+      "line": 15,
+      "symbol": "ReachabilityStatus.unreachable",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/ReachabilityService.swift",
+      "line": 18,
+      "symbol": "ReachabilityStatus",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/ReachabilityService.swift",
+      "line": 19,
+      "symbol": "ReachabilityStatus.reachable",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/ReachabilityService.swift",
+      "line": 29,
+      "symbol": "ReachabilityService",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/ReachabilityService.swift",
+      "line": 30,
+      "symbol": "ReachabilityService.reachability",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/ReachabilityService.swift",
+      "line": 33,
+      "symbol": "ReachabilityServiceError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/ReachabilityService.swift",
+      "line": 34,
+      "symbol": "ReachabilityServiceError.failedToCreate",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/ReachabilityService.swift",
+      "line": 37,
+      "symbol": "DefaultReachabilityService",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/ReachabilityService.swift",
+      "line": 41,
+      "symbol": "DefaultReachabilityService.reachability",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/ReachabilityService.swift",
+      "line": 47,
+      "symbol": "DefaultReachabilityService.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/RxRestClient.swift",
+      "line": 13,
+      "symbol": "RxRestClientError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/RxRestClient.swift",
+      "line": 14,
+      "symbol": "RxRestClientError.urlBuildFailed",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/RxRestClient.swift",
+      "line": 15,
+      "symbol": "RxRestClientError.selfDestroyed",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/RxRestClient.swift",
+      "line": 18,
+      "symbol": "RxRestClientOptions",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/RxRestClient.swift",
+      "line": 19,
+      "symbol": "RxRestClientOptions.retryCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/RxRestClient.swift",
+      "line": 20,
+      "symbol": "RxRestClientOptions.headers",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/RxRestClient.swift",
+      "line": 21,
+      "symbol": "RxRestClientOptions.maxConcurrentOperationCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/RxRestClient.swift",
+      "line": 22,
+      "symbol": "RxRestClientOptions.queryEncoding",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/RxRestClient.swift",
+      "line": 23,
+      "symbol": "RxRestClientOptions.bodyEncoding",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/RxRestClient.swift",
+      "line": 24,
+      "symbol": "RxRestClientOptions.jsonDecoder",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/RxRestClient.swift",
+      "line": 25,
+      "symbol": "RxRestClientOptions.jsonEncoder",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/RxRestClient.swift",
+      "line": 26,
+      "symbol": "RxRestClientOptions.sessionManager",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tigran/dev/ios/RxRestClient/Sources/RxRestClient/RxRestClient.swift",
+      "line": 28,
+      "symbol": "RxRestClientOptions.default",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/tigran/dev/ios/RxRestClient"
+}

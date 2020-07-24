@@ -3,7 +3,7 @@
 [![CI Status](https://github.com/STDevTM/RxRestClient/workflows/RxRestClient/badge.svg?branch=master)](https://github.com/STDevTM/RxRestClient/actions)
 [![Version](https://img.shields.io/cocoapods/v/RxRestClient.svg?style=flat)](https://cocoapods.org/pods/RxRestClient)
 [![License](https://img.shields.io/cocoapods/l/RxRestClient.svg?style=flat)](https://cocoapods.org/pods/RxRestClient)
-[![Platform](https://img.shields.io/cocoapods/p/RxRestClient.svg?style=flat)](https://cocoapods.org/pods/RxRestClient)
+[![Platform](https://img.shields.io/cocoapods/p/RxRestClient.svg?style=flat)](https://stdevtm.github.io/RxRestClient/)
 
 ## Example
 
@@ -68,6 +68,7 @@ let package = Package(
 * Swift Codable protocol support
 * Use custom SessionManager
 * Pagination support
+* [Complete Documentation](https://stdevtm.github.io/RxRestClient/)
 * _more coming soon_
 
 ## How to use

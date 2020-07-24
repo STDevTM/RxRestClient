@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PagingState Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/PagingState" class="dashAnchor"></a>
+    <a title="PagingState Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">RxRestClient 2.2.0 Docs</a> (18% documented)</p>
+        <p class="header-right"><a href="https://github.com/STDevTM/RxRestClient"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">RxRestClient Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        PagingState Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultReachabilityService.html">DefaultReachabilityService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultipartFormDataBuilder.html">MultipartFormDataBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PagingState.html">PagingState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Reachability.html">Reachability</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Reachability/NetworkStatus.html">– NetworkStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RxRestClient.html">RxRestClient</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:12RxRestClient31ReachabilityChangedNotificationSo18NSNotificationNameavp">ReachabilityChangedNotification</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/BaseResponse.html">BaseResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MIMETypes.html">MIMETypes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ReachabilityError.html">ReachabilityError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ReachabilityServiceError.html">ReachabilityServiceError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ReachabilityStatus.html">ReachabilityStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RestResponseStatus.html">RestResponseStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RxRestClientError.html">RxRestClientError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ServiceState.html">ServiceState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/s:10Foundation4DataV">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Encodable.html">Encodable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSString.html">NSString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/URL.html">URL</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/PagingQueryProtocol.html">PagingQueryProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PagingResponseProtocol.html">PagingResponseProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ReachabilityService.html">ReachabilityService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:12RxRestClient12ResponseBodyP">ResponseBody</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ResponseState.html">ResponseState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/BaseState.html">BaseState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultState.html">DefaultState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RxRestClientOptions.html">RxRestClientOptions</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>PagingState</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">PagingState</span><span class="o">&lt;</span><span class="kt">R</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/ResponseState.html">ResponseState</a></span> <span class="k">where</span> <span class="kt">R</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/PagingResponseProtocol.html">PagingResponseProtocol</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient11PagingStateC4Bodya"></a>
+                    <a name="//apple_ref/swift/Alias/Body" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient11PagingStateC4Bodya">Body</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Body</span> <span class="o">=</span> <span class="kt">Data</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient11PagingStateC5stateAA04BaseE0VSgvp"></a>
+                    <a name="//apple_ref/swift/Property/state" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient11PagingStateC5stateAA04BaseE0VSgvp">state</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Structs/BaseState.html">BaseState</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient11PagingStateC8responsexSgvp"></a>
+                    <a name="//apple_ref/swift/Property/response" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient11PagingStateC8responsexSgvp">response</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">R</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient11PagingStateC5stateACyxGAA04BaseE0V_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(state:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient11PagingStateC5stateACyxGAA04BaseE0V_tcfc">init(state:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">required</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Structs/BaseState.html">BaseState</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient11PagingStateC8responseACyxGSo17NSHTTPURLResponseC_10Foundation4DataVSgt_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(response:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient11PagingStateC8responseACyxGSo17NSHTTPURLResponseC_10Foundation4DataVSgt_tcfc">init(response:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">required</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">response</span><span class="p">:</span> <span class="p">(</span><span class="kt">HTTPURLResponse</span><span class="p">,</span> <span class="kt">Data</span><span class="p">?))</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://github.com/hamtiko" target="_blank" rel="external">Tigran Hambardzumyan</a>. All rights reserved. (Last updated: 2020-07-24)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

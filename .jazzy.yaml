@@ -1,0 +1,8 @@
+author: Tigran Hambardzumyan
+author_url: https://github.com/hamtiko
+github_url: https://github.com/STDevTM/RxRestClient
+module: RxRestClient
+output: docs
+theme: apple
+module: RxRestClient
+swift_build_tool: spm

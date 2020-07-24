@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MultipartFormDataBuilder Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/MultipartFormDataBuilder" class="dashAnchor"></a>
+    <a title="MultipartFormDataBuilder Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">RxRestClient 2.2.0 Docs</a> (18% documented)</p>
+        <p class="header-right"><a href="https://github.com/STDevTM/RxRestClient"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">RxRestClient Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        MultipartFormDataBuilder Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultReachabilityService.html">DefaultReachabilityService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultipartFormDataBuilder.html">MultipartFormDataBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PagingState.html">PagingState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Reachability.html">Reachability</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Reachability/NetworkStatus.html">– NetworkStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RxRestClient.html">RxRestClient</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:12RxRestClient31ReachabilityChangedNotificationSo18NSNotificationNameavp">ReachabilityChangedNotification</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/BaseResponse.html">BaseResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MIMETypes.html">MIMETypes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ReachabilityError.html">ReachabilityError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ReachabilityServiceError.html">ReachabilityServiceError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ReachabilityStatus.html">ReachabilityStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RestResponseStatus.html">RestResponseStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RxRestClientError.html">RxRestClientError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ServiceState.html">ServiceState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/s:10Foundation4DataV">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Encodable.html">Encodable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSString.html">NSString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/URL.html">URL</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/PagingQueryProtocol.html">PagingQueryProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PagingResponseProtocol.html">PagingResponseProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ReachabilityService.html">ReachabilityService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:12RxRestClient12ResponseBodyP">ResponseBody</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ResponseState.html">ResponseState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/BaseState.html">BaseState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultState.html">DefaultState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RxRestClientOptions.html">RxRestClientOptions</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>MultipartFormDataBuilder</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">MultipartFormDataBuilder</span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient24MultipartFormDataBuilderCACycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient24MultipartFormDataBuilderCACycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize MultipartFormDataBuilder</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient24MultipartFormDataBuilderC3add4data4name8fileName8mimeType13showExtensiony10Foundation0F0V_S2SAA9MIMETypesOSbtF"></a>
+                    <a name="//apple_ref/swift/Method/add(data:name:fileName:mimeType:showExtension:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient24MultipartFormDataBuilderC3add4data4name8fileName8mimeType13showExtensiony10Foundation0F0V_S2SAA9MIMETypesOSbtF">add(data:<wbr>name:<wbr>fileName:<wbr>mimeType:<wbr>showExtension:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds a body part from the data and appends it to the multipart form data object.</p>
+
+<p>The body part data will be encoded using the following format:</p>
+
+<ul>
+<li><code>Content-Disposition: form-data; name=#{name}; filename=#{filename}</code> (HTTP Header)</li>
+<li><code>Content-Type: #{mimeType}</code> (HTTP Header)</li>
+<li>Encoded file data</li>
+<li><p>Multipart form boundary</p></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">mimeType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/MIMETypes.html">MIMETypes</a></span><span class="p">,</span> <span class="nv">showExtension</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The data to encode into the multipart form data.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name to associate with the data in the <code>Content-Disposition</code> HTTP header.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fileName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The filename to associate with the data in the <code>Content-Disposition</code> HTTP header.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The MIME type to associate with the data in the <code>Content-Type</code> HTTP header.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>showExtension</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Whether should extension be added to <code>filename</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient24MultipartFormDataBuilderC3add4data4name8mimeTypey10Foundation0F0V_SSAA9MIMETypesOtF"></a>
+                    <a name="//apple_ref/swift/Method/add(data:name:mimeType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient24MultipartFormDataBuilderC3add4data4name8mimeTypey10Foundation0F0V_SSAA9MIMETypesOtF">add(data:<wbr>name:<wbr>mimeType:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds a body part from the data and appends it to the multipart form data object.</p>
+
+<p>The body part data will be encoded using the following format:</p>
+
+<ul>
+<li><code>Content-Disposition: form-data; name=#{name}</code> (HTTP Header)</li>
+<li><code>Content-Type: #{generated mimeType}</code> (HTTP Header)</li>
+<li>Encoded data</li>
+<li><p>Multipart form boundary</p></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">mimeType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/MIMETypes.html">MIMETypes</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The data to encode into the multipart form data.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name to associate with the data in the <code>Content-Disposition</code> HTTP header.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The MIME type to associate with the data content type in the <code>Content-Type</code> HTTP header.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient24MultipartFormDataBuilderC3add4file4name8mimeTypey10Foundation3URLV_SSAA9MIMETypesOtF"></a>
+                    <a name="//apple_ref/swift/Method/add(file:name:mimeType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient24MultipartFormDataBuilderC3add4file4name8mimeTypey10Foundation3URLV_SSAA9MIMETypesOtF">add(file:<wbr>name:<wbr>mimeType:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds a body part from the file and appends it to the multipart form data object.
+The body part data will be encoded using the following format:</p>
+
+<ul>
+<li>Content-Disposition: form-data; name=#{name}; filename=#{filename} (HTTP Header)</li>
+<li>Content-Type: #{mimeType} (HTTP Header)</li>
+<li>Encoded file data</li>
+<li><p>Multipart form boundary</p></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">file</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">mimeType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/MIMETypes.html">MIMETypes</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The URL of the file whose content will be encoded into the multipart form data.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name to associate with the file content in the <code>Content-Disposition</code> HTTP header.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The MIME type to associate with the file content in the <code>Content-Type</code> HTTP header.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient24MultipartFormDataBuilderC8addParam_3forySS_SStF"></a>
+                    <a name="//apple_ref/swift/Method/addParam(_:for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient24MultipartFormDataBuilderC8addParam_3forySS_SStF">addParam(_:<wbr>for:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a body part from the data and appends it to the multipart form data object.</p>
+
+<p>The body part data will be encoded using the following format:</p>
+
+<ul>
+<li><code>Content-Disposition: form-data; name=#{key}</code> (HTTP Header)</li>
+<li>Encoded data</li>
+<li><p>Multipart form boundary</p></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addParam</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="k">for</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The value to encode into the multipart form data.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>forKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key to associate with the value in the <code>Content-Disposition</code> HTTP header.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12RxRestClient24MultipartFormDataBuilderC5buildy9Alamofire0deF0CcyF"></a>
+                    <a name="//apple_ref/swift/Method/build()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12RxRestClient24MultipartFormDataBuilderC5buildy9Alamofire0deF0CcyF">build()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Builds MultipartFormData object.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">build</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">MultipartFormData</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://github.com/hamtiko" target="_blank" rel="external">Tigran Hambardzumyan</a>. All rights reserved. (Last updated: 2020-07-24)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
