@@ -2,14 +2,14 @@ platform :ios, '10.0'
 
 use_frameworks!
 
-target 'RxRestClient_Example' do
+target 'RxRestClient-Example' do
   pod 'RxRestClient', :path => '../'
   pod 'RxOptional', '~> 4.1.0'
   pod 'ObjectMapper', '~> 3.5.2'
   pod 'AlamofireNetworkActivityIndicator', '~> 3.1.0'
   pod 'SDWebImage', '~> 4.4.2'
 
-  target 'RxRestClient_Tests' do
+  target 'RxRestClient-Example_Tests' do
     inherit! :search_paths
 
     pod 'Quick', '~> 2.2.0'

@@ -18,10 +18,8 @@ PODS:
     - RxSwift (~> 5)
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
-  - RxRestClient (2.0.0):
-    - Alamofire (>= 5.1)
+  - RxRestClient (2.1.0):
     - RxAlamofire (>= 5.6)
-    - RxCocoa (>= 5.1)
     - RxSwift (>= 5.1)
   - RxSwift (5.1.1)
   - SDWebImage (4.4.8):
@@ -65,10 +63,10 @@ SPEC CHECKSUMS:
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
-  RxRestClient: ca7a1f594dc6c9328dea8cecba0a20a0b780192e
+  RxRestClient: 3659d7af99bcaef19cd04b64e001179c151a12aa
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
 
-PODFILE CHECKSUM: 0a3d217c039dd5262399662697aaadf55ac3cc74
+PODFILE CHECKSUM: 53993e923f873911bd84d9a89f08bc10e343ac75
 
 COCOAPODS: 1.9.3
