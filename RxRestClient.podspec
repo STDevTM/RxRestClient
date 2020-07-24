@@ -16,16 +16,14 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/STDevTM/RxRestClient.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.0'
+  s.osx.deployment_target = "10.12"
+  s.tvos.deployment_target = "10.0"
 
-  s.source_files = 'Sources/RxRestClient/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'RxRestClient' => ['RxRestClient/Assets/*.png']
-  # }
+  s.requires_arc = true
+
+  s.source_files = 'Sources/RxRestClient/**/*'
 
   s.dependency 'RxSwift', '>= 5.1'
-  s.dependency 'RxCocoa', '>= 5.1'
-  s.dependency 'Alamofire', '>= 5.1'
   s.dependency 'RxAlamofire', '>= 5.6'
 
 end
