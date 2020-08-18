@@ -7,10 +7,11 @@
 //
 
 import Alamofire
-import RxRestClient
 import XCTest
 
-class RxRestClientTests: XCTestCase {
+@testable import RxRestClient
+
+final class RxRestClientTests: XCTestCase {
     func testValidateSuccess() throws {
         // Given
         let client = RxRestClient()
@@ -66,4 +67,10 @@ class RxRestClientTests: XCTestCase {
         // Then
         XCTAssertEqual(mimeType, expectedMimeType)
     }
+
+    static var allTests = [
+        ("testValidateSuccess", testValidateSuccess),
+        ("testValidateFailure", testValidateFailure),
+        ("testMimeType", testMimeType)
+    ]
 }
