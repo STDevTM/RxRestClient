@@ -1,8 +1,9 @@
-//
-//  File.swift
-//  
-//
-//  Created by Tigran Hambardzumyan on 8/18/20.
-//
+import XCTest
 
-import Foundation
+#if !canImport(ObjectiveC)
+public func allTests() -> [XCTestCaseEntry] {
+    return [
+        testCase(RxRestClientTests.allTests),
+    ]
+}
+#endif
