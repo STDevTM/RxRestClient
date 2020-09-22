@@ -43,6 +43,8 @@ public enum MIMETypes: String {
     case txt
     case sit
     case mp3
+    case aac
+    case wav
     case msi
     case ps
     case xlsx
