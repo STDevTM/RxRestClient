@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RxRestClient'
-  s.version          = '2.2.0'
+  s.version          = '2.2.1'
 
   s.summary          = 'Simple REST Client based on RxSwift and Alamofire.'
   s.swift_version    = '5.1'
