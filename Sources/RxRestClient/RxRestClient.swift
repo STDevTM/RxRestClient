@@ -389,7 +389,7 @@ open class RxRestClient {
                     // return loaded immediately
                     Observable.just(state),
                     // wait until next page can be loaded
-                    Observable.never().takeUntil(loadNextPageTrigger),
+                    Observable.never().take(until: loadNextPageTrigger),
                     // load next page
                     self.recursivelyGet(url: url, query: newQuery, loadedSoFar: loadedValues, loadNextPageTrigger: loadNextPageTrigger) as Observable<T>
                 ])
@@ -450,11 +450,11 @@ open class RxRestClient {
                     return request.rx.responseData().map { ($0.0, $0.1 as? T.Body) }
                 }
             }
-            .observeOn(backgroundWorkScheduler)
+            .observe(on: backgroundWorkScheduler)
             .map { (httpResponse, body) -> RestResponseStatus in
                 .custom(response: (httpResponse, body))
             }
-            .catchError(handleError)
+            .catch(handleError)
             .retry(options.retryCount)
             .retryOnBecomesReachable(.base(state: BaseState.offline), reachabilityService: reachabilityService)
             .flatMap { response -> Observable<T> in

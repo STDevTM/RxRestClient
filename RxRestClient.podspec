@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RxRestClient'
-  s.version          = '2.2.1'
+  s.version          = '3.0.0'
 
   s.summary          = 'Simple REST Client based on RxSwift and Alamofire.'
   s.swift_version    = '5.1'
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Sources/RxRestClient/**/*'
 
-  s.dependency 'RxSwift', '>= 5.1'
-  s.dependency 'RxAlamofire', '>= 5.6'
+  s.dependency 'RxSwift', '>= 6.0'
+  s.dependency 'RxAlamofire', '>= 6.0'
 
 end
