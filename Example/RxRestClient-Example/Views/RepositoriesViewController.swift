@@ -82,7 +82,7 @@ class RepositoriesViewController: UIViewController {
             .disposed(by: disposeBag)
 
         errorText
-            .observeOn(MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [tableView] msg in
                 guard let msg = msg else {
                     tableView?.backgroundView = nil

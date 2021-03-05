@@ -1,27 +1,27 @@
 PODS:
-  - Alamofire (5.1.0)
+  - Alamofire (5.4.1)
   - AlamofireNetworkActivityIndicator (3.1.0):
     - Alamofire (~> 5.1)
-  - Nimble (8.0.7)
-  - ObjectMapper (3.5.2)
-  - Quick (2.2.0)
-  - RxAlamofire (5.6.0):
-    - RxAlamofire/Core (= 5.6.0)
-  - RxAlamofire/Core (5.6.0):
-    - Alamofire (~> 5.1)
-    - RxSwift (~> 5.1)
-  - RxCocoa (5.1.1):
-    - RxRelay (~> 5)
-    - RxSwift (~> 5)
-  - RxOptional (4.1.0):
-    - RxCocoa (~> 5)
-    - RxSwift (~> 5)
-  - RxRelay (5.1.1):
-    - RxSwift (~> 5)
-  - RxRestClient (2.1.0):
-    - RxAlamofire (>= 5.6)
-    - RxSwift (>= 5.1)
-  - RxSwift (5.1.1)
+  - Nimble (8.0.9)
+  - ObjectMapper (3.5.3)
+  - Quick (2.2.1)
+  - RxAlamofire (6.1.1):
+    - RxAlamofire/Core (= 6.1.1)
+  - RxAlamofire/Core (6.1.1):
+    - Alamofire (~> 5.4)
+    - RxSwift (~> 6.0)
+  - RxCocoa (6.1.0):
+    - RxRelay (= 6.1.0)
+    - RxSwift (= 6.1.0)
+  - RxOptional (5.0.1):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.1.0):
+    - RxSwift (= 6.1.0)
+  - RxRestClient (3.0.0):
+    - RxAlamofire (>= 6.0)
+    - RxSwift (>= 6.0)
+  - RxSwift (6.1.0)
   - SDWebImage (4.4.8):
     - SDWebImage/Core (= 4.4.8)
   - SDWebImage/Core (4.4.8)
@@ -31,7 +31,7 @@ DEPENDENCIES:
   - Nimble (~> 8.0.7)
   - ObjectMapper (~> 3.5.2)
   - Quick (~> 2.2.0)
-  - RxOptional (~> 4.1.0)
+  - RxOptional (~> 5.0.0)
   - RxRestClient (from `../`)
   - SDWebImage (~> 4.4.2)
 
@@ -54,19 +54,19 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   AlamofireNetworkActivityIndicator: 6564782bd7b9e6c430ae67d9277af01907b01ca4
-  Nimble: a73af6ecd4c9106f434f3d55fc54570be3739e0b
-  ObjectMapper: b53ae947d370bf89423e86be7d4e2d2b2a8d3f40
-  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
-  RxAlamofire: f34ddbab56fa2a36f99737f4d4ecc22288a1384f
-  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
-  RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
-  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
-  RxRestClient: 3659d7af99bcaef19cd04b64e001179c151a12aa
-  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  Nimble: 98b888285a615fd34f20e61753cf58ea1402bde4
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
+  Quick: f5754d69b7013f5864c29aab9ae6f0c79c5bc200
+  RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
+  RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
+  RxOptional: e0b39f0863c25c4bfeea83cb35102a5244d048b3
+  RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
+  RxRestClient: 440ccd59a37865c41f40ae8d362eebef78a2ffe9
+  RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
 
-PODFILE CHECKSUM: 53993e923f873911bd84d9a89f08bc10e343ac75
+PODFILE CHECKSUM: 98a6e1affeb32871ab2d47cd7efb03c2374bc718
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1
