@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version          = '3.0.0'
 
   s.summary          = 'Simple REST Client based on RxSwift and Alamofire.'
-  s.swift_version    = '5.1'
+  s.swift_version    = '5.6'
 
   s.description      = <<-DESC
   Reactive way to interact with REST API. Send request and get responses easily. Handling basic response cases by default, for example: Not Found, Unauthorized, etc.
