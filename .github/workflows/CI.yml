@@ -9,11 +9,11 @@ on:
 jobs:
   MacOS:
     name: macOS
-    runs-on: macos-10.15
+    runs-on: macos-12.4
     env:
       PROJECT: RxRestClient.xcodeproj
       SCHEME: RxRestClient-Package
-      DEVELOPER_DIR: /Applications/Xcode_11.5.app/Contents/Developer
+      DEVELOPER_DIR: /Applications/Xcode_13.4.1.app/Contents/Developer
 
     steps:
     - uses: actions/checkout@v2

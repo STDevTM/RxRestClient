@@ -6,7 +6,7 @@ on:
 
 jobs:
   push:
-    runs-on: macos-10.15
+    runs-on: macos-12.4
 
     steps:
     - uses: actions/checkout@v2
