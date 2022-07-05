@@ -14,8 +14,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 * iOS 10.0+
 * tvOS 10.0+
 * macOS 10.12+
-* Swift 5.1+
-* Xcode 11+
+* Swift 5.6+
+* Xcode 13+
 
 ## Migration Guides
 
