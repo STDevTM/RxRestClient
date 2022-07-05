@@ -9,7 +9,7 @@ on:
 jobs:
   MacOS:
     name: macOS
-    runs-on: macos-12.4
+    runs-on: macos-12
     env:
       PROJECT: RxRestClient.xcodeproj
       SCHEME: RxRestClient-Package
@@ -66,7 +66,7 @@ jobs:
 
   CocoaPods:
     name: CocoaPods
-    runs-on: macos-10.15
+    runs-on: macos-12
     strategy:
       matrix:
         platform: ['ios', 'macos', 'tvos']
