@@ -71,7 +71,7 @@ jobs:
       matrix:
         platform: ['ios', 'macos', 'tvos']
     env:
-      DEVELOPER_DIR: /Applications/Xcode_11.5.app/Contents/Developer
+      DEVELOPER_DIR: /Applications/Xcode_13.4.1.app/Contents/Developer
     steps:
     - uses: actions/checkout@v1
       
